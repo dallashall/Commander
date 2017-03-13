@@ -47,8 +47,19 @@ Implementation Timeline
 + Teams have many projects
 + Changes reflected in components
 
-### **Phase 5:** User Profiles (2 days)
+### **Phase 5:** User Profiles (1 days)
 **Objective:**
 + Profiles show User's teams, projects, and tasks
-+ Users can have projects without having teams
++ Users have a default team called 'My Team'
 + Styling completed
+
+### **Bonus:**
+**Task Assignments**
++ User can assign a task to one or more team_members
+
+**Calendar**
++ User can assign a due-date to a task.
++ Tasks appear on calendar.
+
+**Comments**
++ User can comment on tasks.

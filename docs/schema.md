@@ -30,6 +30,7 @@
 | column name | data type | details |
 |------------ | --------- | ------- |
 |id| integer| not null, primary key|
+|project_id| integer| not null, indexed|
 |user_id| integer | not null, indexed |
 |name| string| not null, indexed|
 |description| text| -|
