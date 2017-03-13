@@ -1,21 +1,43 @@
-![Signup/Login](./wireframes/auth.png)
+<kbd>
+  <img src="./wireframes/auth.png" />
+</kbd>
 
-![Logged-in](./wireframes/logged_in.png)
+<kbd>
+  <img src="./wireframes/logged_in.png" />
+</kbd>
 
-![Sidebar](./wireframes/sidebar.png)
+<kbd>
+  <img src="./wireframes/sidebar.png" />
+</kbd>
 
-![Header](./wireframes/header.png)
+<kbd>
+  <img src="./wireframes/header.png" />
+</kbd>
 
-![Header](./wireframes/sidebar.png)
+<kbd>
+  <img src="./wireframes/sidebar.png" />
+</kbd>
 
-![New Team](./wireframes/new_team.png)
+<kbd>
+  <img src="./wireframes/new_team.png" />
+</kbd>
 
-![New/Edit Project](./wireframes/new_project.png)
+<kbd>
+  <img src="./wireframes/new_project.png" />
+</kbd>
 
-![Project](./wireframes/project.png)
+<kbd>
+  <img src="./wireframes/project.png" />
+</kbd>
 
-![New Task](./wireframes/new_task.png)
+<kbd>
+  <img src="./wireframes/new_task.png" />
+</kbd>
 
-![Edit Task](./wireframes/edit_task.png)
+<kbd>
+  <img src="./wireframes/edit_task.png" />
+</kbd>
 
-![Task](./wireframes/task.png)
+<kbd>
+  <img src="./wireframes/task.png" />
+</kbd>
