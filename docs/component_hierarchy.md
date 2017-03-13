@@ -22,7 +22,7 @@
 ### TasksContainer
 + Tasks
 
-### TaskDetail
+### TaskDetails
 + StatusButtons (toggle)
 
 ### NewTeamContainer
@@ -39,3 +39,20 @@
 + StatusButtons
 
 ### SearchContainer (Bonus)
+
+|Route|Component|
+|-----|---------|
+|`/`|Main|
+|`/signup` & `/signin`| Auth|
+|`/teams/`|TeamContainer|
+|`/teams/new`|TeamFormContainer|
+|`/teams/:teamId`|TeamDetails|
+|`/teams/:teamId/edit`|TeamFormContainer|
+|`/teams/:teamId/projects`|ProjectContainer|
+|`/teams/:teamId/projects/new`|ProjectFormContainer|
+|`/teams/:teamId/projects/:projectId`|ProjectDetails|
+|`/teams/:teamId/projects/:projectId/edit`|ProjectFormContainer|
+|`/teams/:teamId/projects/:projectId/tasks`|TasksContainer|
+|`/teams/:teamId/projects/:projectId/tasks/new`|TaskFormContainer|
+|`/teams/:teamId/projects/:projectId/tasks/:taskId`|TaskDetails|
+|`/teams/:teamId/projects/:projectId/tasks/:taskId/edit`|TaskFormContainer|
