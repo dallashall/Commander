@@ -18,9 +18,9 @@ Commander is a project management app inspired by Asana, with a Rails backend an
 Design Docs
 -----------
 * [Wireframes](./wireframes.md)
-* [React Components](./react_components.md)
+* [React Components](./component_hierarchy.md)
 * [API Endpoints](./api_endpoints.md)
-* [DB Schema](./db_schema.md)
+* [DB Schema](./schema.md)
 * [Sample State](./sample_state.md)
 
 Implementation Timeline
