@@ -43,7 +43,7 @@ Implementation Timeline
 
 ### **Phase 4:** Teams Model, API, and components (2 days)
 **Objective:**
-+ CRUD operations for Tasks through API
++ CRUD operations for Teams through API
 + Teams have many projects
 + Changes reflected in components
 
