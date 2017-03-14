@@ -1,0 +1,14 @@
+.auth {
+  position: absolute;
+  top: 50px;
+  margin-top: 50px;
+  flex: 0 0 400px;
+  height: 275px;
+  width: 400px;
+  background:linear-gradient(to bottom right, rgba(255,255,255,0.5), rgba(240,240,240,0.5));
+
+  form {
+    display: flex;
+    flex: 1;
+  }
+}

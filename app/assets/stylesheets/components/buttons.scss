@@ -1,0 +1,24 @@
+[class^="btn"] {
+  cursor: pointer;
+  padding: 8px;
+}
+
+.btn-float {
+  box-shadow: 1px 1px 3px 1px darkgrey;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.btn-float:first-of-type {
+  margin-left: 10px;
+}
+.btn-float:last-of-type {
+  margin-right: 10px;
+}
+.btn-float:hover {
+  box-shadow: 1px 1px 2px 1px grey;
+}
+.btn-float:active {
+  box-shadow: 1px 1px 3px 1px grey;
+}

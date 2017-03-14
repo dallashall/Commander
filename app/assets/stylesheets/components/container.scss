@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+}
+
+.flex {
+  display: flex;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.center-flex-content {
+  justify-content: center;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.hero {
+  position: relative;
+  height: 600px;
+  z-index: -1;
+  img {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+}
