@@ -6,6 +6,7 @@ import {
   postSession,
   deleteSession
 } from '../../util/session_api_utils';
+import {hashHistory} from 'react-router';
 
 export const RECEIVE_USER = 'RECEIVE_USER';
 export const REMOVE_USER = 'REMOVE_USER';
@@ -29,7 +30,7 @@ const receiveErrors = (errors) => ({
 export const login = (formUser) => (dispatch) => {
   return postSession(formUser).then(
     user => dispatch(receiveUser(user)),
-    err => dispatch(receiveErrors(err))
+    err => dispatch(receiveErrors(err.responseJSON))
   );
 };
 

@@ -16,7 +16,7 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = merge({}, this.state);
-    this.props.processForm(user).then(hashHistory.push('/'))
+    this.props.processForm(user).then(()=>hashHistory.push('/'));
   }
 
   handleChange(prop){
@@ -36,6 +36,7 @@ class SessionForm extends React.Component {
   }
 
   render() {
+    console.log(this.props);
     let switchButtonRoute;
     let submitButtonText;
     let switchButtonText;
@@ -61,7 +62,7 @@ class SessionForm extends React.Component {
             <input onChange={this.handleChange('password')} type="password" />
             <input className={"btn-float white btn-single"} type="submit" value={submitButtonText} />
             <ul>
-              {this.props.errors.map((error, idx) => <li key={idx}>{error}</li>)}
+              {this.props.errors.map((error, idx) => <li className={"error-message"} key={idx}>{error}</li>)}
             </ul>
           </form>
           <div className={"row line-top"}>

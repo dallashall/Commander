@@ -16,3 +16,5 @@ export default ({store}) => {
     </Provider>
   )
 }
+
+// Add onEnter to root that redirects to login/signup
