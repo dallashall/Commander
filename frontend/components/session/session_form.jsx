@@ -11,10 +11,11 @@ class SessionForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.guestLogin = this.guestLogin.bind(this);
   }
 
   handleSubmit(e) {
-    e.preventDefault();
+    if (e) e.preventDefault();
     const user = merge({}, this.state);
     this.props.processForm(user).then(()=>hashHistory.push('/'));
   }
@@ -33,6 +34,10 @@ class SessionForm extends React.Component {
     return () => {
       hashHistory.push(path);
     };
+  }
+
+  guestLogin() {
+    this.props.demoLogin().then(() => hashHistory.push('/'));
   }
 
   render() {
@@ -76,6 +81,7 @@ class SessionForm extends React.Component {
               {switchButtonText}
             </button>
             <button
+              onClick={this.guestLogin}
               className={"btn-float flex flex-1 center-flex-content white"}>
               Demo Log In
             </button>
