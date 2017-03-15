@@ -4,7 +4,7 @@ class Api::SessionsController < ApplicationController
     if (@user && @user.is_password?(user_params[:password]))
       login(@user)
     else
-      render json: ["There is an error in your credentials."], status: 422
+      render json: ["There is an error with your credentials."], status: 422
     end
   end
 

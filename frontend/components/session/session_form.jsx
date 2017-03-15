@@ -36,7 +36,6 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     let switchButtonRoute;
     let submitButtonText;
     let switchButtonText;
@@ -56,10 +55,16 @@ class SessionForm extends React.Component {
           <img src="http://dallashall.tech/wp-content/uploads/2016/12/cropped-nevada-sky-dallas.jpg" />
         </div>
         <div className={"auth col floating box"}>
-          <h2 className={"thin flex center-flex-content"}>{submitButtonText}</h2>
+          <h2 className={"thick flex center-flex-content title"}>Task Commander</h2>
           <form onSubmit={this.handleSubmit} className={"col"}>
-            <input onChange={this.handleChange('username')} type="text" />
-            <input onChange={this.handleChange('password')} type="password" />
+            <input
+              onChange={this.handleChange('username')}
+              type="text"
+              placeholder="Username"/>
+            <input
+              onChange={this.handleChange('password')}
+              type="password"
+              placeholder="Password"/>
             <input className={"btn-float white btn-single"} type="submit" value={submitButtonText} />
             <ul>
               {this.props.errors.map((error, idx) => <li className={"error-message"} key={idx}>{error}</li>)}

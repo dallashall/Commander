@@ -7,7 +7,7 @@ import {
 } from '../actions/session/session_actions';
 
 const _initialState = {
-  user: undefined,
+  currentUser: undefined,
   errors: []
 }
 

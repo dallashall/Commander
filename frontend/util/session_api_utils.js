@@ -36,9 +36,9 @@ export const postSession = (user) => {
   });
 };
 
-export const deleteSession = (id) => {
+export const deleteSession = () => {
   return $.ajax({
     method: 'DELETE',
-    url: `/api/session/${id}`
+    url: `/api/session`
   });
 };

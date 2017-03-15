@@ -34,15 +34,16 @@ export const login = (formUser) => (dispatch) => {
   );
 };
 
-export const logout = (id) => (dispatch) => {
-  return deleteSession(id).then(
+export const logout = () => (dispatch) => {
+  return deleteSession().then(
     msg => dispatch(receiveErrors(msg))
   );
 };
 
 export const signup = (formUser) => (dispatch) => {
   return postUser(formUser).then(
-    user => dispatch(receiveUser(user))
+    user => dispatch(receiveUser(user)),
+    err => dispatch(receiveErrors(err.responseJSON))
   );
 };
 
