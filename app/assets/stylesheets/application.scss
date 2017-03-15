@@ -12,14 +12,15 @@
  *
  *= require_self
  */
- @import "reset";
- @import "colors";
- @import "shadows";
+ @import "./reset";
+ @import "./colors";
+ @import "./shadows";
+ @import "./components/shadows";
  @import "./components/copy";
  @import "./components/container";
  @import "./components/buttons";
  @import "./components/inputs";
- @import "./components/shadows";
  @import "./components/shapes";
  @import "./components/auth";
+ @import "./components/dashboard";
 

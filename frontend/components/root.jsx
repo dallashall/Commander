@@ -23,7 +23,7 @@ export default ({store}) => {
         <Route path="/" component={App}>
           <Route onEnter={_redirectIfLoggedIn(store)} path="/login" component={SessionFormContainer} />
           <Route onEnter={_redirectIfLoggedIn(store)} path="/signup" component={SessionFormContainer} />
-          <IndexRoute onEnter={_redirectIfLoggedOut(store)} component={DashboardContainer} />
+          <IndexRoute className={"full-height"} onEnter={_redirectIfLoggedOut(store)} component={DashboardContainer} />
         </Route>
       </Router>
     </Provider>

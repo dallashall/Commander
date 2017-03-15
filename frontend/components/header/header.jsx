@@ -19,10 +19,10 @@ class Header extends React.Component{
     let {currentUser} = this.props;
     let username = currentUser ? currentUser.username : "";
     return (
-      <div>
-        <h2>{username}</h2>
-        <button onClick={this.handleLogout.bind(this)}>Log Out</button>
-      </div>
+      <nav className={"top-bar"}>
+        <button className="btn-text btn-bars" onClick={this.handleLogout.bind(this)}>Log Out</button>
+        <h3>{username}</h3>
+      </nav>
     );
   }
 }

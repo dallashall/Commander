@@ -1,0 +1,17 @@
+.sidebar {
+  display: flex;
+  background: $dark-grey;
+  flex: 0 0 240px;
+}
+.top-bar {
+  display:flex;
+  background: white;
+  box-shadow: $light-shadow;
+  flex:1;
+  height: 40px;
+  align-items: center;
+  justify-content: flex-end;
+  h3 {
+    padding: 0 15px;
+  }
+}

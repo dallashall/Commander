@@ -2,7 +2,6 @@
   cursor: pointer;
   padding: 8px;
 }
-
 .btn-float {
   box-shadow: $light-shadow;
   margin-left: 5px;
@@ -22,7 +21,26 @@
 .btn-float:active {
   box-shadow: $dark-shadow;
 }
-
 .btn-single {
   margin: 10px;
+}
+
+.btn-text {
+  text-transform: uppercase;
+  font-weight: light;
+  padding: 15px;
+  color: grey;
+}
+
+.btn-text:hover {
+  color: black;
+}
+
+.btn-text:active {
+  color: $dark-orange;
+}
+
+.btn-bars {
+  border-right: 1px solid lightgrey;
+  border-left: 1px solid lightgrey;
 }

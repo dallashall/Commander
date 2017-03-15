@@ -3,13 +3,25 @@
   top: 50px;
   margin-top: 50px;
   flex: 0 0 400px;
-  min-height: 290px;
+  min-height: 320px;
   width: 400px;
-  background:linear-gradient(to bottom right, rgba(255,255,255,0.5), rgba(240,240,240,0.5));
+  background:linear-gradient(to bottom right, rgba(255,255,255,0.6), rgba(240,240,240,0.5));
+  // background-color: white;
 
-  form {
+  h2 {
+    padding-top: 30px;
+    padding-bottom: 0;
+  }
+
+  form, div {
+    margin: 25px;
     display: flex;
     flex: 1;
+  }
+
+  button {
+    margin-top: 20px;
+    margin-bottom: 0;
   }
 }
 .error-message {
