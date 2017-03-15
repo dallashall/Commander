@@ -30,21 +30,21 @@ Implementation Timeline
 + Functioning Rails project with front-end Authentication
 + Styling complete for login components
 
-### **Phase 2:** Projects (2 days)
+### **Phase 2:** Teams Model, API, and components (2 days)
+**Objective:**
++ CRUD operations for Teams through API
++ Teams have many projects
++ Changes reflected in components
+
+### **Phase 3:** Projects (2 days)
 **Objective:**
 + CRUD operations for Projects through API
 + Changes reflected in components
 
-### **Phase 3:** Task Model, API, and components (2 days)
+### **Phase 4:** Task Model, API, and components (2 days)
 **Objective:**
 + CRUD operations for Tasks through API
 + Tasks belong to Projects
-+ Changes reflected in components
-
-### **Phase 4:** Teams Model, API, and components (2 days)
-**Objective:**
-+ CRUD operations for Teams through API
-+ Teams have many projects
 + Changes reflected in components
 
 ### **Phase 5:** User Profiles (1 days)
