@@ -1,7 +1,5 @@
-$floating-shadow: 1px 1px 3px 1px rgba(0,0,0, 0.3);
-$inset-shadow: inset 1px 1px 3px 0px rgba(0,0,0, 0.3);
 .floating {
-  box-shadow: $floating-shadow;
+  box-shadow: $light-shadow;
 }
 
 .inset-shadow {

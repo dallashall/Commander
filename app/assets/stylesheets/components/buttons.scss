@@ -4,7 +4,7 @@
 }
 
 .btn-float {
-  box-shadow: 1px 1px 3px 1px darkgrey;
+  box-shadow: $light-shadow;
   margin-left: 5px;
   margin-right: 5px;
   margin-top: 10px;
@@ -17,10 +17,10 @@
   margin-right: 10px;
 }
 .btn-float:hover {
-  box-shadow: 1px 1px 2px 1px grey;
+  box-shadow: $shadow;
 }
 .btn-float:active {
-  box-shadow: 1px 1px 3px 1px grey;
+  box-shadow: $dark-shadow;
 }
 
 .btn-single {

@@ -11,12 +11,15 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_self
- *= require reset
- *= require ./components/copy
- *= require ./components/container
- *= require ./components/buttons
- *= require ./components/inputs
- *= require ./components/shadows
- *= require ./components/shapes
- *= require ./components/auth
  */
+ @import "reset";
+ @import "colors";
+ @import "shadows";
+ @import "./components/copy";
+ @import "./components/container";
+ @import "./components/buttons";
+ @import "./components/inputs";
+ @import "./components/shadows";
+ @import "./components/shapes";
+ @import "./components/auth";
+
