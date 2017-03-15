@@ -2,6 +2,39 @@
   display: flex;
   background: $dark-grey;
   flex: 0 0 240px;
+  flex-direction: column;
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 50px;
+    h2 {
+      padding: 0;
+      color: white;
+    }
+    padding: 15px 0;
+  }
+  .teams {
+    background: $toupe;
+    margin: 15px 3px;
+    display: flex;
+    flex-direction: column;
+    .selected {
+      display: flex;
+      flex: 1;
+      padding: 5px;
+    }
+    li {
+      border-top: 1px solid $dark-grey;
+      padding: 5px;
+    }
+    li:hover, .selected:hover {
+      background-color: $orange;
+    }
+    li:active, .selected:active {
+      background-color: $dark-orange;
+    }
+  }
 }
 .top-bar {
   display:flex;

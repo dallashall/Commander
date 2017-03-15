@@ -11,3 +11,13 @@ names = %w(Bob Sally Jane John Jon Dylan Dillon May Gene Samson Carl Brad Drew K
 names.each do |name, idx|
   User.create({username: name, password: "superSecretPassword#{idx}"})
 end
+
+teams = %w(A/V Planners Catering TV Media)
+
+Team.create({name: "A-Team", user_id: 8});
+
+teams.each do |team, idx|
+  new_team = Team.new(name: team, user_id: User.find_by(username: "Demo User").id)
+  new_team.save
+  names.sample(5).each { |name| TeamMember.create(user_id: User.find_by(username: name).id, team_id: new_team.id) }
+end
