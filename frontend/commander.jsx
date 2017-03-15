@@ -10,6 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   const root = document.getElementById('root');
   const store = configureStore(preloadedState);
-  window.store = store;
+  // window.store = store;
   ReactDOM.render(<Root store={store}>Commander</Root>, root);
 });
