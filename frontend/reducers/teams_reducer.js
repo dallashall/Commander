@@ -6,21 +6,25 @@ import {
 } from '../actions/teams_actions';
 
 const _initial_state = {
-  teams: {}
-}
+  "0": {
+    name: "",
+    description: "",
+    id: ""
+  }
+};
 
 export default (state = _initial_state, action) => {
   Object.freeze(state);
   let newState = merge({}, state);
   switch (action.type) {
     case RECEIVE_TEAMS:
-      newState.teams = action.teams;
+      newState = action.teams;
       return newState;
     case RECEIVE_TEAM:
-      newState.teams[action.team.id] = action.team
+      newState[action.team.id] = action.team
       return newState;
     case REMOVE_TEAM:
-      delete(newState.teams[action.team.id]);
+      delete(newState[action.team.id]);
       return newState;
     default:
       return state

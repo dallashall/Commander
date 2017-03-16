@@ -16,6 +16,8 @@ teams = %w(A/V Planners Catering TV Media)
 
 Team.create({name: "A-Team", user_id: 8});
 
+TeamMember.create({user_id: User.find_by(username: "Demo User").id, team_id: Team.find_by(name: "A-Team").id})
+
 teams.each do |team, idx|
   new_team = Team.new(name: team, user_id: User.find_by(username: "Demo User").id)
   new_team.save

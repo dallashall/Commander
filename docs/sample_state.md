@@ -25,13 +25,19 @@
     1 : {
       name: 'A-Team',
       description: 'A fantastic group of ...people, mostly',
-      user_id: 1,
-      members: [
-        {id: 2, name: "John Wayne"},
-        {id: 3, name: "Jackie Chan"}
-      ]
+      user_id: 1
     }
   },
+  teamMembers: {
+    1: {
+      id: 1,
+      name: 'Fun Guy',
+    },
+    2: {
+      id: 2,
+      name: 'Drew'
+    }
+  }
   projects: {
     1: {
       name: 'Send Rocks Into Space',

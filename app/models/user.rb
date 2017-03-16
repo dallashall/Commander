@@ -1,5 +1,7 @@
 class User < ApplicationRecord
-  has_many :teams
+  has_many :team_members
+  has_many :teams, through: :team_members
+  has_many :owned_teams, foreign_key: :user_id, class_name: :team
   
   validates :username, presence: true, uniqueness: true
   validates :password_digest, :session_token, presence: true

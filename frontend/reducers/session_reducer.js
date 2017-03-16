@@ -7,23 +7,22 @@ import {
 } from '../actions/session/session_actions';
 
 const _initialState = {
-  currentUser: undefined,
+  currentUser: false,
   errors: []
 }
 
 const SessionReducer = (state = _initialState, action) => {
   Object.freeze(state);
-  const newState = merge({}, state);
+  let newState = merge({}, state);
   switch (action.type) {
     case RECEIVE_USER:
       newState.currentUser = action.user;
       return newState;
     case RECEIVE_ERRORS:
       newState.errors = action.errors;
-    case REMOVE_USER:
-      newState.currentUser = undefined;
-      newState.errors = action.errors;
       return newState;
+    case REMOVE_USER:
+      return _initialState;
     default:
       return state;
   }
