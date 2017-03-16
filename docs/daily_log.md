@@ -7,3 +7,7 @@
 + #componentWillUpdate will still finish loading the component, even if there is a redirect to interupt it. (Yay asynchronicity!)
 + The backend is the rock.
 + Testing piecewise is good, so long as the pieces are in decent-sized chunks.
+
+# Day 2
+--------
++ Made a design decision to make API endpoints on team_members. This avoids any kind of nested routes and also allows for member roles in the future, with minimal effort in the now.

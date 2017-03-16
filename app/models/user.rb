@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :teams
+  
   validates :username, presence: true, uniqueness: true
   validates :password_digest, :session_token, presence: true
   validates :password, length: {minimum: 8, allow_nil: true}
