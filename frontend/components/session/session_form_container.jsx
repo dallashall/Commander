@@ -17,7 +17,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   const formAction = ownProps.location.pathname === '/login' ? login : signup;
   return {
     processForm: (user) => dispatch(formAction(user)),
-    demoLogin: () => dispatch(formAction({username: "Demo User", password: "12345678"}))
+    demoLogin: () => dispatch(login({username: "Demo User", password: "12345678"}))
   };
 };
 

@@ -15,9 +15,25 @@
   }
   .btn-single {
     margin: 10px 0;
+    display: flex;
+    justify-content: center;
+  }
+  i {
+    color: $dark-grey;
+    padding:3px;
+  }
+  .single {
+    margin: 10px 0;
   }
   h3 {
     font-weight: 200;
     font-size: 32px;
   }
+  .delete {
+    margin-left: 0;
+  }
+  input[type="submit"]:last-of-type {
+    margin-right: 0;
+  }
+  
 }
