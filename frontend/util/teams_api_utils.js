@@ -16,14 +16,15 @@ export const postTeam = (team) => {
    return $.ajax({
      method: 'POST',
      url: '/api/teams',
-     data: team
+     data: {team}
    });
 };
 
 export const patchTeam = (team) => {
   return $.ajax({
     method: 'PATCH',
-    url: `/api/teams/${team.id}`
+    url: `/api/teams/${team.id}`,
+    data: {team}
   });
 };
 

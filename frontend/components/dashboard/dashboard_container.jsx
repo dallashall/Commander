@@ -12,4 +12,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {};
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Dashboard);

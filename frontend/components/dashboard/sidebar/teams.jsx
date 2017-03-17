@@ -46,7 +46,6 @@ class Teams extends React.Component {
   render() {
     let {teams} = this.props;
     let selectedTeam = this.state.team;
-    console.log(teams);
     let menuVisibility;
     let menuArrow;
     if (this.state.menuVisible) {

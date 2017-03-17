@@ -45,7 +45,7 @@ class Api::TeamsController < ApplicationController
 
   def team_params
     data = params.require(:team).permit(:name, :description, :user_id)
-    data[:user_id] = current_user.id
+    data[:user_id] ||= current_user.id
     data
   end
 

@@ -4,6 +4,7 @@
   flex: 0 0 240px;
   flex-direction: column;
   box-shadow: $shadow;
+  z-index: 1;
 
   .logo {
     display: flex;
@@ -25,6 +26,7 @@
   height: 44px;
   align-items: center;
   justify-content: flex-end;
+  z-index: 1;
   h3 {
     padding: 0 15px;
   }

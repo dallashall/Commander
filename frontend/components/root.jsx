@@ -4,6 +4,7 @@ import {Router, Route, IndexRoute, hashHistory} from 'react-router';
 import App from './app';
 import SessionFormContainer from './session/session_form_container';
 import DashboardContainer from './dashboard/dashboard_container';
+import TeamsFormContainer from './dashboard/teams/teams_form_container';
 
 const _redirectIfLoggedIn = (store) => (nextState, replace) => {
   console.log(nextState);
@@ -49,11 +50,17 @@ export default ({store}) => {
           <Route
           path="/dashboard"
           onEnter={_redirectIfLoggedOut(store)}
-          component={DashboardContainer} />
+          component={DashboardContainer}>
+            <Route path="teams/new"
+            edit={false}
+            component={TeamsFormContainer}/>
+
+            <Route path="teams/edit"
+            edit={true}
+            component={TeamsFormContainer} />
+          </Route>
         </Route>
       </Router>
     </Provider>
   )
 }
-
-// <IndexRoute onEnter={_redirectIfLoggedOut(store)} component={DashboardContainer} />

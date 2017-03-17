@@ -3,7 +3,7 @@ import HeaderContainer from '../header/header_container';
 import TeamsContainer from './sidebar/teams_container';
 import TeamMemberContainer from './sidebar/team_members_container';
 
-export default (props) => {
+export default ({children}) => {
   return (
     <div className={"container full-height"}>
       <nav className={"sidebar"}>
@@ -12,11 +12,16 @@ export default (props) => {
         </div>
         <TeamsContainer />
         <TeamMemberContainer />
+        <h2>[ Projects ]</h2>
       </nav>
       <div className="main-area">
         <HeaderContainer />
         <main>
-          
+          <section>
+            {
+              children
+            }
+          </section>
         </main>
       </div>
     </div>
