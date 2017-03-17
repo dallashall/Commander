@@ -17,7 +17,7 @@ export default ({children}) => {
       <div className="main-area">
         <HeaderContainer />
         <main>
-          <section>
+          <section className="flex flex-1">
             {
               children
             }

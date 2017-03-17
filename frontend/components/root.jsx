@@ -7,8 +7,13 @@ import DashboardContainer from './dashboard/dashboard_container';
 import TeamsFormContainer from './dashboard/teams/teams_form_container';
 
 const _redirectIfLoggedIn = (store) => (nextState, replace) => {
-  console.log(nextState);
   if (store.getState().session.currentUser) {
+    replace('/dashboard');
+  }
+}
+
+const _redirectIfNoTeam = (store) => (nextState, replace) => {
+  if(!store.getState().team.id) {
     replace('/dashboard');
   }
 }
@@ -56,6 +61,7 @@ export default ({store}) => {
             component={TeamsFormContainer}/>
 
             <Route path="teams/edit"
+            onEnter={_redirectIfNoTeam(store)}
             edit={true}
             component={TeamsFormContainer} />
           </Route>

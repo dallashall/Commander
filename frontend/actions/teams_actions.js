@@ -5,6 +5,8 @@ import {
   patchTeam,
   deleteTeam
 } from '../util/teams_api_utils';
+import {fetchSelectedTeam, resetSelectedTeam} from './team_actions';
+import {fetchTeamMembers, resetTeamMembers} from './team_members_actions';
 
 export const RECEIVE_TEAMS = 'RECEIVE_TEAMS';
 export const RECEIVE_TEAM = 'RECEIVE_TEAM';
@@ -20,14 +22,18 @@ const receiveTeams = (teams) => ({
   teams
 });
 
-const removeTeam = (team) => ({
+const removeTeam = (id) => ({
   type: REMOVE_TEAM,
-  team
+  id
 });
 
 export const makeTeam = (formTeam) => (dispatch) => {
   return postTeam(formTeam).then(
-    team => dispatch(receiveTeam(team))
+    team => {
+      dispatch(receiveTeam(team));
+      dispatch(fetchSelectedTeam(team.id));
+      dispatch(fetchTeamMembers(team.id));
+    }
   );
 };
 
@@ -45,10 +51,19 @@ export const fetchTeam = (id) => (dispatch) => {
 
 export const modifyTeam = (formTeam) => (dispatch) => {
   return patchTeam(formTeam).then(
-    team => dispatch(receiveTeam(team))
+    team => {
+      dispatch(receiveTeam(team));
+      dispatch(fetchSelectedTeam(team.id));
+    }
   );
 };
 
 export const destroyTeam = (id) => (dispatch) => {
-  return deleteTeam(id)
+  return deleteTeam(id).then(
+    msg => {
+      dispatch(removeTeam(id));
+      dispatch(resetSelectedTeam());
+      dispatch(resetTeamMembers());
+    }
+  )
 };

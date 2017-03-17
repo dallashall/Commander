@@ -9,6 +9,7 @@ export const RECEIVE_TEAM_MEMBERS = "RECEIVE_TEAM_MEMBERS";
 export const RECEIVE_TEAM_MEMBER = 'RECEIVE_TEAM_MEMBER';
 export const REMOVE_TEAM_MEMBER = 'REMOVE_TEAM_MEMBER';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
+export const RESET_TEAM_MEMBERS = 'RESET_TEAM_MEMBERS';
 
 const receiveTeamMembers = (teamMembers) => ({
   type: RECEIVE_TEAM_MEMBERS,
@@ -57,3 +58,7 @@ export const destroyTeamMember = (id) => (dispatch) => {
     err => dispatch(receiveErrors(err))
   );
 };
+
+export const resetTeamMembers = () => dispatch => {
+  return dispatch(receiveTeamMembers({}));
+}

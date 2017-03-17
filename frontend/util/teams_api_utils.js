@@ -28,9 +28,9 @@ export const patchTeam = (team) => {
   });
 };
 
-export const deleteTeam = (team) => {
+export const deleteTeam = (id) => {
   return $.ajax({
     method: 'DELETE',
-    url: `/api/teams/${team.id}`
+    url: `/api/teams/${id}`
   });
 };

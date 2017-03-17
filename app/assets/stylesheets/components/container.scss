@@ -16,12 +16,24 @@
   flex-direction: column;
 }
 
+.flex-between {
+  justify-content: space-between;
+}
+
+.flex-v-center {
+  align-items: center;
+}
+
 .center-flex-content {
   justify-content: center;
 }
 
 .flex-1 {
   flex: 1;
+}
+
+.flex-half-single {
+  flex: .5;
 }
 
 .hero {
@@ -37,6 +49,11 @@
 
 .full-height {
   height: 100%;
+}
+
+.left-panel {
+  padding: 35px;
+  margin: 10px;
 }
 
 // Utilities

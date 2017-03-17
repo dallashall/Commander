@@ -12,7 +12,7 @@ import {
 
 const mapStateToProps = (state, ownProps) => {
   let team;
-  if (ownProps.team) {
+  if (ownProps.route.edit) {
     team = merge({}, state.team);
   } else {
     team = {
@@ -26,7 +26,7 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  const formAction = ownProps.edit ? modifyTeam : makeTeam;
+  const formAction = ownProps.route.edit ? modifyTeam : makeTeam;
   return {
     formAction: (team) => dispatch(formAction(team)),
     destroyTeam: (id) => dispatch(destroyTeam(id)),

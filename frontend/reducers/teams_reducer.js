@@ -28,7 +28,7 @@ export default (state = _initial_state, action) => {
       newState[action.team.id] = action.team
       return newState;
     case REMOVE_TEAM:
-      delete(newState[action.team.id]);
+      delete(newState[action.id]);
       return newState;
     default:
       return state

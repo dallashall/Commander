@@ -4,14 +4,28 @@
     display: flex;
     flex-direction: column;
     align-content: center;
+    .selected-container {
+      display: flex;
+      .btn {
+        background-color: $toupe;
+        margin: 0 5px;
+        border-radius: 3px;
+      }
+      .btn:hover {
+        background-color: $orange;
+      }
+      .btn:active {
+        background-color: $dark-orange;
+      }
+    }
     .selected {
       text-transform: uppercase;
       background: $toupe;
       display: flex;
       justify-content: space-between;
       flex: 1;
-      padding: 5px;
-      box-shadow: $shadow;
+      padding: 8px;
+      box-shadow: $light-shadow;
       border-top-right-radius: 10px;
       // border-bottom-right-radius: 10px;
     }

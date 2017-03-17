@@ -14,12 +14,16 @@ import { fetchTeamMembers } from '../../../actions/team_members_actions';
 
 const _initial_state = {
   teams: undefined,
-  team: undefined
+  team: undefined,
+  currentUser: {
+    id: undefined
+  }
 }
 
 const mapStateToProps = (state, ownProps) => ({
   teams: values(state.teams),
-  team: state.team
+  team: state.team,
+  currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
