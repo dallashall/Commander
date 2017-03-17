@@ -1,14 +1,24 @@
 h1 {
-  font-size: 42;
+  font-size: 26;
 }
 
 h2 {
-  font-size: 36;
+  font-size: 28px;
   padding: 10px;
 }
 
 h3 {
-  font-size: 32;
+  font-size: 18px;
+}
+
+strong {
+  display: inline;
+  font-weight: 600;
+}
+
+small {
+  display: inline;
+  font-weight: 200;
 }
 
 .title {

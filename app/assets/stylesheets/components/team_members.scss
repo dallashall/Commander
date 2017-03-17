@@ -1,0 +1,29 @@
+.team-members {
+  span {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding: 5px;
+    font-size: 14px;
+  }
+  h3 {
+    color:white;
+    font-weight: 200;
+    font-size: 16px;
+  }
+  ul{
+    max-height: 100px;
+    overflow: scroll;
+    border-top: 1px solid $toupe;
+    border-bottom: 1px solid $toupe;
+    box-shadow: inset 1px 1px 3px 1px rgba(0,0,0,0.2);
+    background-color: rgba(0,0,0, 0.2);
+  }
+
+  li {
+    color: $toupe;
+    padding: 3px 8px;
+    margin: 2px 0;
+  }
+}

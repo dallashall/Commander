@@ -13,7 +13,12 @@ export default (props) => {
         <TeamsContainer />
         <TeamMemberContainer />
       </nav>
-      <HeaderContainer />
+      <div className="main-area">
+        <HeaderContainer />
+        <main>
+          
+        </main>
+      </div>
     </div>
   );
 }

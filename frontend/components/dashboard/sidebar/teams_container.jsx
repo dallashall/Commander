@@ -12,6 +12,11 @@ import {
 import { fetchSelectedTeam } from '../../../actions/team_actions';
 import { fetchTeamMembers } from '../../../actions/team_members_actions';
 
+const _initial_state = {
+  teams: undefined,
+  team: undefined
+}
+
 const mapStateToProps = (state, ownProps) => ({
   teams: values(state.teams),
   team: state.team

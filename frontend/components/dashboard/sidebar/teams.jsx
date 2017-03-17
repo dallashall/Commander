@@ -5,7 +5,10 @@ class Teams extends React.Component {
     super(props);
     this.state = {
       team: {
-        name: "Select a Team"
+        name: "Select a Team",
+        owner: {
+          username: ""
+        }
       },
       menuVisible: false
     };
@@ -42,7 +45,8 @@ class Teams extends React.Component {
 
   render() {
     let {teams} = this.props;
-    let team = this.state.team;
+    let selectedTeam = this.state.team;
+    console.log(teams);
     let menuVisibility;
     let menuArrow;
     if (this.state.menuVisible) {
@@ -53,11 +57,23 @@ class Teams extends React.Component {
       menuArrow = "fa-caret-right";
     }
     return (
-      <div onClick={this.toggleMenu} className={"teams pointer"}>
-        <div className={"selected"}><i className={`fa ${menuArrow} fa-fw fa-lg`}></i>{team.name}</div>
-        <ul className={`${menuVisibility}`}>
+      <div
+      onClick={this.toggleMenu}
+      className={"teams pointer"}>
+        <div
+        className={"selected"}>
+          <strong><i className={`fa ${menuArrow} fa-fw fa-lg`}></i>
+          {selectedTeam.name}</strong> <span>{selectedTeam.owner.username}</span>
+        </div>
+        <ul
+        className={`${menuVisibility}`}>
+          <li><i className="fa fa-plus fa-fw"></i> <strong>New Team</strong></li>
           {teams.map((team, idx) => (
-              <li onClick={this.handleClick(team.id, idx)} key={idx}>{team.name}</li>
+            <li
+            onClick={this.handleClick(team.id, idx)}
+            key={idx}>
+              <strong>{team.name}</strong><span>{team.owner.username}</span>
+            </li>
             )
           )}
         </ul>

@@ -9,7 +9,11 @@ const _initial_state = {
   "0": {
     name: "",
     description: "",
-    id: ""
+    id: "",
+    owner: {
+      username: "",
+      id: ""
+    }
   }
 };
 

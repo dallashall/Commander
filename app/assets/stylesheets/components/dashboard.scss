@@ -3,51 +3,35 @@
   background: $dark-grey;
   flex: 0 0 240px;
   flex-direction: column;
+  box-shadow: $shadow;
+
   .logo {
     display: flex;
     justify-content: center;
     align-items: center;
     flex: 0 0 50px;
+    padding: 15px 0;
+
     h2 {
       padding: 0;
       color: white;
-    }
-    padding: 15px 0;
-  }
-  .teams {
-    background: $toupe;
-    margin: 15px 3px;
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    .selected {
-      display: flex;
-      flex: 1;
-      padding: 5px;
-    }
-    li {
-      border-top: 1px solid $dark-grey;
-      padding: 5px 5px 5px 35px;
-      cursor: pointer;
-      font-size: 11px;
-    }
-    li:hover, .selected:hover {
-      background-color: $orange;
-    }
-    li:active, .selected:active {
-      background-color: $dark-orange;
     }
   }
 }
 .top-bar {
   display:flex;
   background: white;
-  box-shadow: $light-shadow;
-  flex:1;
-  height: 40px;
+  box-shadow: $shadow;
+  height: 44px;
   align-items: center;
   justify-content: flex-end;
   h3 {
     padding: 0 15px;
   }
+}
+
+.main-area {
+  display: flex;
+  flex:1;
+  flex-direction: column;
 }

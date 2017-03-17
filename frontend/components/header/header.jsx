@@ -15,6 +15,7 @@ class Header extends React.Component{
   handleLogout () {
     this.props.logout();
   }
+  
   render() {
     let {currentUser} = this.props;
     let username = currentUser ? currentUser.username : "";

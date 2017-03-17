@@ -4,7 +4,11 @@ import {SET_TEAM} from '../actions/team_actions';
 const _initial_state = {
   id: "",
   name: "",
-  description: ""
+  description: "",
+  owner: {
+    username: "",
+    id: ""
+  }
 };
 
 export default (state = _initial_state, action) => {
