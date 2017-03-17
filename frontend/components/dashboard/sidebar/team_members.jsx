@@ -12,14 +12,10 @@ class TeamMember extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log(nextProps);
-    if (this.props.team.id !== "" && this.props.team.id !== nextprops.team.id){
-      this.props.fetchTeamMembers(this.props.team.id);
-    }
   }
   
   render() {
-    let { teamMembers, destroyTeamMember } = this.props
+    const { teamMembers, destroyTeamMember } = this.props;
     return (
       <ul>
         {teamMembers.map((teamMember, idx) => (

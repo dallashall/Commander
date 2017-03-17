@@ -25,6 +25,8 @@ class Teams extends React.Component {
       let team = this.state.team;
       this.props.fetchSelectedTeam(teamId).then(
         () => this.setState({team: this.props.teams[idx]})
+      ).then(
+        () => this.props.fetchTeamMembers(teamId)
       );
       this.setState({
         menuVisible: false

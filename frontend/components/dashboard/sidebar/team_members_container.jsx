@@ -8,10 +8,13 @@ import {
   destroyTeamMember
 } from '../../../actions/team_members_actions';
 
-const mapStateToProps = (state, ownProps) => ({
-  teamMembers: values(state.teamMembers),
-  team: state.team
-});
+const mapStateToProps = (state, ownProps) => {
+  return {
+    teamMembers: values(state.teamMembers.teamMembers),
+    errors: state.teamMembers.errors,
+    team: state.team
+  };
+};
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   fetchTeamMembers: (teamId) => dispatch(fetchTeamMembers(teamId)),
