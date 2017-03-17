@@ -9,9 +9,11 @@ import {
   destroyTeam,
   modifyTeam
 } from '../../../actions/teams_actions';
+import { fetchSelectedTeam } from '../../../actions/team_actions';
 
 const mapStateToProps = (state, ownProps) => ({
-  teams: values(state.teams)
+  teams: values(state.teams),
+  team: state.team
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
@@ -19,7 +21,8 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   fetchTeam: (id) => dispatch(fetchTeam(id)),
   makeTeam: (team) => dispatch(makeTeam(team)),
   modifyTeam: (team) => dispatch(modifyTeam(team)),
-  destroyTeam: (id) => dispatch(destroyTeam(team))
+  destroyTeam: (id) => dispatch(destroyTeam(team)),
+  fetchSelectedTeam: (id) => dispatch(fetchSelectedTeam(id))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Teams);

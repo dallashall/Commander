@@ -20,11 +20,13 @@ class Teams extends React.Component {
     );
   }
 
-  handleClick(idx) {
+  handleClick(teamId, idx) {
     return (e) => {
-      let team = this.props.teams[idx];
+      let team = this.state.team;
+      this.props.fetchSelectedTeam(teamId).then(
+        () => this.setState({team: this.props.teams[idx]})
+      );
       this.setState({
-        team: team,
         menuVisible: false
       });
     };
@@ -53,7 +55,7 @@ class Teams extends React.Component {
         <div className={"selected"}><i className={`fa ${menuArrow} fa-fw fa-lg`}></i>{team.name}</div>
         <ul className={`${menuVisibility}`}>
           {teams.map((team, idx) => (
-              <li onClick={this.handleClick(idx)} key={idx}>{team.name}</li>
+              <li onClick={this.handleClick(team.id, idx)} key={idx}>{team.name}</li>
             )
           )}
         </ul>

@@ -1,6 +1,7 @@
 import React from 'react';
 import HeaderContainer from '../header/header_container';
 import TeamsContainer from './sidebar/teams_container';
+import TeamMemberContainer from './sidebar/team_members_container';
 
 export default (props) => {
   return (
@@ -10,6 +11,7 @@ export default (props) => {
           <h2>Task Commander</h2>
         </div>
         <TeamsContainer />
+        <TeamMemberContainer />
       </nav>
       <HeaderContainer />
     </div>

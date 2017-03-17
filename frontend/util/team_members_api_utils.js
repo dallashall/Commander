@@ -21,9 +21,9 @@ export const postTeamMember = (teamMember) => {
   });
 };
 
-export const deleteTeamMember = (teamMember) => {
+export const deleteTeamMember = (id) => {
   return $.ajax({
     method: 'DELETE',
-    url: `/api/team_members/${teamMember.id}`
+    url: `/api/team_members/${id}`
   });
 };
