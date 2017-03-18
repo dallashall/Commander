@@ -8,7 +8,7 @@ export default ({children}) => {
     <div className={"container full-height"}>
       <nav className={"sidebar"}>
         <div className={"logo"}>
-          <h2>Task Commander</h2>
+          <h2><small>task</small>Commander</h2>
         </div>
         <TeamsContainer />
         <TeamMemberContainer />

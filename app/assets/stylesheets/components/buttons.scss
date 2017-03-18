@@ -1,6 +1,9 @@
 [class^="btn"] {
   cursor: pointer;
   padding: 8px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
 }
 .btn-float {
   box-shadow: $light-shadow;
@@ -52,4 +55,10 @@
 
 .pointer {
   cursor: pointer;
+}
+
+.btn-dropdown {
+  padding: 3px;
+  cursor: pointer;
+  font-family: 'Oswals', sans-serif;
 }

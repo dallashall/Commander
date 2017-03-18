@@ -74,7 +74,7 @@ class Teams extends React.Component {
       <div
       className={"teams pointer"}>
         <div className="selected-container">
-          <div onClick={this.toggleMenu} className={"selected"}>
+          <div onClick={this.toggleMenu} className="selected btn-dropdown">
             <strong><i className={`fa ${menuArrow} fa-fw fa-lg`}></i>
             {selectedTeam.name}</strong> <span>{selectedTeam.owner.username}</span>
           </div>
@@ -86,14 +86,16 @@ class Teams extends React.Component {
         className={`${menuVisibility}`}>
           <li
           onClick={this.newClick}>
-            <i className="fa fa-plus fa-fw"></i> <strong>New Team</strong>
+            <button className="btn-dropdown"><i className="fa fa-plus fa-fw"></i> New Team</button>
           </li>
 
           {teams.map((team, idx) => (
             <li
             onClick={this.handleClick(team.id, idx)}
             key={idx}>
-              <strong>{team.name}</strong><span>{team.owner.username}</span>
+              <button class="btn btn-dropdown">
+                {team.name}<span>{team.owner.username}</span>
+              </button>
             </li>
             )
           )}

@@ -60,7 +60,7 @@ class SessionForm extends React.Component {
           <img src="http://dallashall.tech/wp-content/uploads/2016/12/cropped-nevada-sky-dallas.jpg" />
         </div>
         <div className={"auth col floating box"}>
-          <h2 className={"thick flex center-flex-content title"}>Task Commander</h2>
+          <h1 className={"flex center-flex-content flex-baseline title"}><small>Task</small>Commander</h1>
           <form onSubmit={this.handleSubmit} className={"col"}>
             <input
               onChange={this.handleChange('username')}

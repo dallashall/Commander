@@ -1,5 +1,14 @@
+h1, h2, h3, h4, h4 {
+  font-family: 'Oswald', sans-serif;
+}
+
+span, strong, small {
+  font-family: inherit;
+  color: inherit;
+}
+
 h1 {
-  font-size: 26;
+  font-size: 34px;
 }
 
 h2 {
@@ -23,7 +32,12 @@ small {
 
 .title {
   text-transform: uppercase;
-  padding: 20px;
+  padding-top: 20px;
+
+  small {
+    text-transform: lowercase;
+    font-size: 32px;
+  }
 }
 
 .thin {

@@ -57,7 +57,7 @@ class TeamsForm extends React.Component {
             <button
             onClick={() => hashHistory.push('/dashboard')}
             className="btn-float btn-single center-flex-content">
-              <i className="fa fa-window-close-o fa-fw fa-lg"></i>
+              <i className="fa fa-times fa-fw fa-lg"></i>
             </button>
           </div>
           <form>
