@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: {format: 'json'} do
     resources :users
-    get 'team_members/projects', to: 'team_members#projects'
+    get 'teams/:id/projects', to: 'teams#projects'
     resources :teams
     delete :team_members, to: 'team_members#destroy'
     resources :team_members, only: [:show, :index, :create]

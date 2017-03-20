@@ -33,8 +33,6 @@ class Teams extends React.Component {
         () => this.setState({team: this.props.teams[idx]})
       ).then(
         () => this.props.fetchTeamMembers(teamId)
-      ).then(
-        () => hashHistory.push('/dashboard')
       );
       this.setState({
         menuVisible: false

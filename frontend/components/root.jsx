@@ -6,6 +6,8 @@ import SessionFormContainer from './session/session_form_container';
 import DashboardContainer from './dashboard/dashboard_container';
 import TeamsFormContainer from './dashboard/teams/teams_form_container';
 import TeamMemberFormContainer from './dashboard/team_members/team_member_form_container';
+import ProjectFormContainer from './dashboard/projects/project_form_container';
+import ProjectsDetailContainer from './dashboard/projects/projects_detail_container';
 
 const _redirectIfLoggedIn = (store) => (nextState, replace) => {
   if (store.getState().session.currentUser) {
@@ -69,6 +71,17 @@ export default ({store}) => {
               component={TeamMemberFormContainer} />
             </Route>
 
+            <Route
+              path="project"
+              component={ProjectsDetailContainer}>
+              <Route
+                path="edit"
+                component={ProjectFormContainer} />
+                
+              <Route
+                path="new"
+                component={ProjectFormContainer} />
+            </Route>
           </Route>
         </Route>
       </Router>

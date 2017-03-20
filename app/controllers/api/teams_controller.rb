@@ -1,5 +1,5 @@
 class Api::TeamsController < ApplicationController
-  before_action :deny_if_not_owner, except: [:create, :index, :show]
+  before_action :deny_if_not_owner, except: [:create, :index, :show, :projects]
 
   def create
     @team = Team.new(team_params)
@@ -12,7 +12,7 @@ class Api::TeamsController < ApplicationController
 
   def projects
     @projects = selected_team.projects
-    render '/api/projects/show.json.jbuilder'
+    render '/api/projects/index.json.jbuilder'
   end
 
   def update

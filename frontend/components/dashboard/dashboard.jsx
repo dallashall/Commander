@@ -2,6 +2,7 @@ import React from 'react';
 import HeaderContainer from '../header/header_container';
 import TeamsContainer from './sidebar/teams_container';
 import TeamMemberContainer from './sidebar/team_members_container';
+import ProjectsContainer from './projects/projects_container';
 
 export default ({children}) => {
   return (
@@ -12,7 +13,7 @@ export default ({children}) => {
         </div>
         <TeamsContainer />
         <TeamMemberContainer />
-        <h2>[ Projects ]</h2>
+        <ProjectsContainer />
       </nav>
       <div className="main-area">
         <HeaderContainer />

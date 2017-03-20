@@ -13,6 +13,9 @@ class TeamMember extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    if (this.props.team != nextProps.team) {
+      this.props.fetchTeamMembers(nextProps.team.id);
+    }
   }
   
   render() {

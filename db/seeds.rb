@@ -23,3 +23,7 @@ teams.each do |team, idx|
   new_team.save
   names.sample(5).each { |name| TeamMember.create(user_id: User.find_by(username: name).id, team_id: new_team.id) }
 end
+
+Project.create(user_id: 1, team_id: 2, name: "Test Project 1", description: "Testing the things")
+Project.create(user_id: 1, team_id: 2, name: "Test Project 2", description: "Testing the things")
+Project.create(user_id: 1, team_id: 2, name: "Test Project 3", description: "Testing the things")
