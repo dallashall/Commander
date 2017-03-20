@@ -42,17 +42,16 @@
 
 |Route|Component|
 |-----|---------|
-|`/`|Main|
+|`/`|redirect to `/signup` or `/dashboard`|
 |`/signup` & `/signin`| Auth|
-|`/teams/`|TeamContainer|
-|`/teams/new`|TeamFormContainer|
-|`/teams/:teamId`|TeamDetails|
-|`/teams/:teamId/edit`|TeamFormContainer|
-|`/projects`|ProjectContainer|
-|`/projects/new`|ProjectFormContainer|
-|`/projects/:projectId`|ProjectDetails|
-|`/projects/:projectId/edit`|ProjectFormContainer|
-|`/tasks`|TasksContainer|
-|`/tasks/new`|TaskFormContainer|
-|`/tasks/:taskId`|TaskDetails|
-|`/tasks/:taskId/edit`|TaskFormContainer|
+|`/dashboard`|Dashboard, TeamContainer, TeamMembersContainer, ProjectsContainer|
+|`/dashboard/teams/new`|TeamFormContainer|
+|`/dashboard/teams/edit`|TeamFormContainer|
+|`/dashboard/teams/edit/team_members`|TeamMemberFormContainer|
+|`/dashboard/projects/`|ProjectDetails|
+|`/dashboard/projects/new`|ProjectFormContainer|
+|`/dashboard/projects/edit`|ProjectFormContainer|
+|`/dashboard/tasks`|TasksContainer|
+|`/dashboard/tasks/new`|TaskFormContainer|
+|`/dashboard/tasks/:taskId`|TaskDetails|
+|`/dashboard/tasks/:taskId/edit`|TaskFormContainer|
