@@ -78,8 +78,9 @@ class Teams extends React.Component {
             <strong><i className={`fa ${menuArrow} fa-fw fa-lg`}></i>
             {selectedTeam.name}</strong> <span>{selectedTeam.owner.username}</span>
           </div>
-          <div onClick={this.editClick} className={`btn btn-float ${editVisibility}`}>
+          <div onClick={this.editClick} className={`btn btn-float tooltip ${editVisibility}`}>
             <i className="fa fa-pencil-square-o fa-lg fa-fw" />
+            <div className="tooltip-text">Edit Team</div>
           </div>
         </div>
         <ul
@@ -93,8 +94,8 @@ class Teams extends React.Component {
             <li
             onClick={this.handleClick(team.id, idx)}
             key={idx}>
-              <button class="btn btn-dropdown">
-                {team.name}<span>{team.owner.username}</span>
+              <button className="btn btn-dropdown">
+                <strong>{team.name}</strong> <span>{team.owner.username}</span>
               </button>
             </li>
             )

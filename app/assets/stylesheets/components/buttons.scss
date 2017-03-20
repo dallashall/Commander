@@ -1,64 +1,75 @@
 [class^="btn"] {
-  cursor: pointer;
-  padding: 8px;
-  font-family: 'Oswald', sans-serif;
-  font-weight: 300;
-  text-transform: uppercase;
+    cursor: pointer;
+    padding: 8px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
 }
+
 .btn-float {
-  box-shadow: $light-shadow;
-  margin-left: 5px;
-  margin-right: 5px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+    box-shadow: $light-shadow;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
+
 .btn-float:first-of-type {
-  margin-left: 10px;
+    margin-left: 10px;
 }
+
 .btn-float:last-of-type {
-  margin-right: 10px;
+    margin-right: 10px;
 }
+
 .btn-float:hover {
-  box-shadow: $shadow;
+    box-shadow: $shadow;
 }
+
 .btn-float:active {
-  box-shadow: $dark-shadow;
+    box-shadow: $dark-shadow;
 }
+
 .btn-single {
-  margin: 10px;
+    margin: 10px;
 }
 
 .btn-text {
-  text-transform: uppercase;
-  font-weight: light;
-  padding: 15px;
-  color: grey;
+    text-transform: uppercase;
+    font-weight: light;
+    padding: 15px;
+    color: grey;
 }
 
 .btn-text:hover {
-  color: black;
+    color: black;
 }
 
 .btn-text:active {
-  color: $dark-orange;
+    color: $dark-orange;
 }
 
 .btn-bars {
-  border-right: 1px solid lightgrey;
-  border-left: 1px solid lightgrey;
+    border-right: 1px solid lightgrey;
+    border-left: 1px solid lightgrey;
 }
 
 .red {
-  background-color: rgb(150, 5, 5);
-  color: white;
+    background-color: rgb(150, 5, 5);
+    color: white;
 }
 
 .pointer {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .btn-dropdown {
-  padding: 3px;
-  cursor: pointer;
-  font-family: 'Oswals', sans-serif;
+    padding: 0;
+    cursor: pointer;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
 }

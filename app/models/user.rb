@@ -1,11 +1,12 @@
 class User < ApplicationRecord
   has_many :team_members
   has_many :teams, through: :team_members
+  has_many :associates, -> { distinct }, through: :teams
   has_many :owned_teams, foreign_key: :user_id, class_name: :team
   
   validates :username, presence: true, uniqueness: true
   validates :password_digest, :session_token, presence: true
-  validates :password, length: {minimum: 8, allow_nil: true}
+  validates :password, length: { minimum: 8, allow_nil: true }
   attr_reader :password
   before_validation :set_session_token
 

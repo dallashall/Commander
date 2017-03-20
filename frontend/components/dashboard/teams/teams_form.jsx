@@ -50,35 +50,41 @@ class TeamsForm extends React.Component {
       single = "btn-single ";
     }
     return (
-      <div className="box white floating left-panel full-height flex col flex-half-single">
-        <div className="edit-form col">
-          <div className="flex flex-between flex-v-center">
-            <h3>{formTitle}</h3>
-            <button
-            onClick={() => hashHistory.push('/dashboard')}
-            className="btn-float btn-single center-flex-content">
-              <i className="fa fa-times fa-fw fa-lg"></i>
-            </button>
-          </div>
-          <form>
-            <input
-            type="text"
-            value={this.state.name}
-            placeholder="Name"
-            onChange={this.handleChange('name')}/>
-
-            <textarea
-            value={`${this.state.description}`}
-            placeholder="Description"
-            onChange={this.handleChange('description')}/>
-
-            <div className="flex row">
-              {deleteButton}
-              <input className={`btn-float ${single}flex-1 center-flex-content`} type="submit" value={formTitle} onClick={this.handleSubmit} />
+      <section className="flex flex-1">
+        <div className="box white floating left-panel full-height flex col flex-half-single">
+          <div className="edit-form col">
+            <div className="flex flex-between flex-v-center">
+              <h3>{formTitle}</h3>
+              <button
+              onClick={() => hashHistory.push('/dashboard')}
+              className="btn-float btn-single center-flex-content">
+                <i className="fa fa-times fa-fw fa-lg"></i>
+              </button>
             </div>
-          </form>
+            <form>
+              <input
+              type="text"
+              value={this.state.name}
+              placeholder="Name"
+              onChange={this.handleChange('name')}/>
+
+              <textarea
+              value={`${this.state.description}`}
+              placeholder="Description"
+              onChange={this.handleChange('description')} />
+              
+              <button onClick={() => hashHistory.push('/dashboard/teams/edit/team_members')}
+              className="btn-float btn-single">Edit Members</button>
+
+              <div className="flex row">
+                {deleteButton}
+                <input className={`btn-float ${single}flex-1 center-flex-content`} type="submit" value={formTitle} onClick={this.handleSubmit} />
+              </div>
+            </form>
+          </div>
         </div>
-      </div>
+        {this.props.children}
+      </section>
     )
   }
   

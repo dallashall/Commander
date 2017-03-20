@@ -1,4 +1,5 @@
 import React from 'react';
+import { hashHistory } from 'react-router';
 
 class TeamMember extends React.Component {
   constructor(props) {
@@ -18,7 +19,7 @@ class TeamMember extends React.Component {
     const { teamMembers, destroyTeamMember } = this.props;
     return (
       <div className="team-members">
-        <span><h3>Team Members</h3><i className="fa fa-plus pointer" /></span>
+        <span><h3>Team Members</h3><button onClick={() => hashHistory.push("/dashboard/team_members/edit")}><i className="fa fa-plus pointer" /></button></span>
         <ul>
           {teamMembers.map((teamMember, idx) => (
           <li key={idx}>{teamMember.username}</li>

@@ -5,6 +5,7 @@ import App from './app';
 import SessionFormContainer from './session/session_form_container';
 import DashboardContainer from './dashboard/dashboard_container';
 import TeamsFormContainer from './dashboard/teams/teams_form_container';
+import TeamMemberFormContainer from './dashboard/team_members/team_member_form_container';
 
 const _redirectIfLoggedIn = (store) => (nextState, replace) => {
   if (store.getState().session.currentUser) {
@@ -63,7 +64,11 @@ export default ({store}) => {
             <Route path="teams/edit"
             onEnter={_redirectIfNoTeam(store)}
             edit={true}
-            component={TeamsFormContainer} />
+            component={TeamsFormContainer}>
+              <Route path="team_members"
+              component={TeamMemberFormContainer} />
+            </Route>
+
           </Route>
         </Route>
       </Router>

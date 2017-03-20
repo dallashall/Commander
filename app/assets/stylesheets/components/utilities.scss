@@ -1,0 +1,8 @@
+// Utilities
+.hidden {
+    display: none;
+}
+
+.striped:nth-of-type(odd) {
+    background-color: rgba(125, 125, 125, 0.1);
+}

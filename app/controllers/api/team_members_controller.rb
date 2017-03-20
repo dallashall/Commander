@@ -1,5 +1,5 @@
 class Api::TeamMembersController < ApplicationController
-  before_action :render_error_if_not_owner, except: [:index, :show]
+  # before_action :render_error_if_not_owner, except: [:index, :show]
 
   def index
     @team_members = TeamMember.where(team_id: team_id_params)
@@ -10,10 +10,10 @@ class Api::TeamMembersController < ApplicationController
   end
 
   def destroy
-    @team_member = selected_team_member
+    @team_member = TeamMember.find_by(team_member_params)
     if @team_member
       @team_member.destroy
-      render json: ["Removed user."]
+      render :show
     else
       render json: ["Failed to remove user."]
     end
