@@ -40,11 +40,13 @@ class TeamsForm extends React.Component {
   }
 
   render() {
-    let deleteButton, formTitle, single;
+    let deleteButton, formTitle, single, editMembers;
     if (this.props.team.id){
       deleteButton = <button onClick={this.handleDelete} className="btn-float flex-1 center-flex-content delete red" >Delete</button>;
       formTitle = "Edit Team";
-      single = ""
+      single = "";
+      editMembers = (<button onClick={() => hashHistory.push('/dashboard/teams/edit/team_members')}
+        className="btn-float btn-single">Edit Members</button>);
     } else {
       formTitle = "New Team";
       single = "btn-single ";
@@ -73,8 +75,7 @@ class TeamsForm extends React.Component {
               placeholder="Description"
               onChange={this.handleChange('description')} />
               
-              <button onClick={() => hashHistory.push('/dashboard/teams/edit/team_members')}
-              className="btn-float btn-single">Edit Members</button>
+              {editMembers}
 
               <div className="flex row">
                 {deleteButton}
