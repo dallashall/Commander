@@ -25,4 +25,10 @@ class ApplicationController < ActionController::Base
   def user_params
     params.require(:user).permit(:username, :password)
   end
+
+  def project_params
+    data = params.require(:project).permit(:team_id, :name, :description, :id)
+    data[:user_id] = current_user.id
+    data
+  end
 end

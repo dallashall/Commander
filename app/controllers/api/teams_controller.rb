@@ -10,6 +10,11 @@ class Api::TeamsController < ApplicationController
     end
   end
 
+  def projects
+    @projects = selected_team.projects
+    render '/api/projects/show.json.jbuilder'
+  end
+
   def update
     @team = selected_team
     if @team && @team.update_attributes(team_params)

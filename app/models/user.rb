@@ -3,6 +3,7 @@ class User < ApplicationRecord
   has_many :teams, through: :team_members
   has_many :associates, -> { distinct }, through: :teams
   has_many :owned_teams, foreign_key: :user_id, class_name: :team
+  has_many :projects
   
   validates :username, presence: true, uniqueness: true
   validates :password_digest, :session_token, presence: true
