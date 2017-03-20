@@ -3,7 +3,7 @@
   form {
     display: flex;
     flex-direction: column;
-    flex:1;
+    flex:1 0;
     padding: 0;
   }
   input, textarea {
@@ -34,6 +34,11 @@
   }
   input[type="submit"]:last-of-type {
     margin-right: 0;
+  }
+  ul {
+    margin: 10px 0;
+    flex: 1 2;
+    overflow-y: scroll;
   }
   
 }

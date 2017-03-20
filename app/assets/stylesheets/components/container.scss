@@ -48,6 +48,10 @@
     flex: 1;
 }
 
+.flex-0-1 {
+    flex: 0 1;
+}
+
 .flex-half-single {
     flex: 0 calc(50% - 20px);
 }

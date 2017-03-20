@@ -17,20 +17,6 @@ class TeamMemberForm extends React.Component {
 
   handleChange(e) {
     this.setState({ query: e.target.value });
-
-    // let filtered;
-    // if (e.target.value.length > 1) {
-    //   filtered = this.state.filteredMembers.filter(associate => {
-    //     const pattern = new RegExp(e.target.value, 'i');
-    //     return associate.username.match(pattern)
-    //   });
-    // } else {
-    //   filtered = this._filteredMembers;
-    // }
-    // if (!filtered) {
-    //   filtered = [];
-    // }
-    // this.setState({ filteredMembers: filtered });
   }
 
   handleAddTeamMember(id) {
@@ -93,7 +79,7 @@ class TeamMemberForm extends React.Component {
     return (
       <div className="box white floating left-panel full-height flex col flex-half-single">
         <div className="edit-form col">
-          <div className="flex flex-between flex-v-center">
+          <div className="flex flex-between flex-v-center flex-0-1">
             <h3>Edit Team Members</h3>
             <button
               onClick={() => hashHistory.push('/dashboard/teams/edit')}
