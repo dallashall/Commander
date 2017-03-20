@@ -3,7 +3,7 @@
 ### AuthFormContainer
 + AuthForm
 
-### HomeContainer
+### Dashboard
 + Sidebar
   + Teams (Selector)
   + TeamContainer
@@ -12,12 +12,21 @@
 
 ### TeamContainer
 + TeamDetails
++ TeamMembersContainer
+
+### TeamMemberContainer
 + TeamMembers
-+ Projects (Selector)
-+ ProjectContainer
+
+### TeamMembersFormContainer
++ TeamMemberForm
+
+### TeamMemberForm
++ state.currentUser.associates (all known members)
++ TeamMembers (based on state.team)
 
 ### ProjectContainer
 + ProjectDetails
++ Projects
 
 ### TasksContainer
 + Tasks
