@@ -19,7 +19,7 @@ class TeamMember extends React.Component {
     const { teamMembers, destroyTeamMember } = this.props;
     return (
       <div className="team-members">
-        <span><h3>Team Members</h3><button onClick={() => hashHistory.push("/dashboard/team_members/edit")}><i className="fa fa-plus pointer" /></button></span>
+        <span><h3>Team Members</h3></span>
         <ul>
           {teamMembers.map((teamMember, idx) => (
           <li key={idx}>{teamMember.username}</li>
