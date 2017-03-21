@@ -8,6 +8,6 @@ export default ({ project, setCurrentProject }) => {
     );
   };
   return (
-    <li onClick={handleClick(project.id)}>{project.name}</li>
+    <li> <button className="btn btn-dropdown" onClick={handleClick(project.id)}>{project.name}</button></li>
   );
 };
