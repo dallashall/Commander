@@ -1,0 +1,2 @@
+class TaskAssignmentsController < ApplicationController
+end

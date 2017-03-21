@@ -1,44 +1,47 @@
 .sidebar {
-  display: flex;
-  background: $dark-grey;
-  flex: 0 0 240px;
-  flex-direction: column;
-  box-shadow: $shadow;
-  z-index: 1;
-
-  .logo {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 0 0 50px;
-    padding: 15px 0;
-
-    h2 {
-      padding: 0;
-      color: white;
-      text-transform: uppercase;
-      small {
-        font-size: 18px;
-        text-transform: lowercase;
-      }
+    background: $dark-grey;
+    flex: 0 0 240px;
+    flex-direction: column;
+    box-shadow: $shadow;
+    z-index: 1;
+    .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 0 0 50px;
+        padding: 15px 0;
+        h2 {
+            padding: 0;
+            color: white;
+            text-transform: uppercase;
+            small {
+                font-size: 18px;
+                text-transform: lowercase;
+            }
+        }
     }
-  }
 }
+
 .top-bar {
-  display:flex;
-  background: white;
-  box-shadow: $shadow;
-  height: 44px;
-  align-items: center;
-  justify-content: flex-end;
-  z-index: 1;
-  h3 {
-    padding: 0 15px;
-  }
+    display: flex;
+    background: white;
+    box-shadow: $shadow;
+    height: 46px;
+    align-items: center;
+    justify-content: flex-end;
+    z-index: 1;
+    h3 {
+        padding: 0px 15px;
+    }
+    .btn-text {
+        padding: 0 15px;
+        height: 100%;
+    }
 }
 
 .main-area {
-  display: flex;
-  flex:1;
-  flex-direction: column;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
 }

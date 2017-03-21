@@ -11,6 +11,12 @@ class ProjectForm extends React.Component {
     this.handleDelete = this.handleDelete.bind(this);
   }
 
+  componenDidMount() {
+    if (!this.props.team.id) {
+      hashHistory.push('/dashboard');
+    }
+  }
+
   handleChange(prop){
     return (e) => {
       switch (prop) {
@@ -34,13 +40,8 @@ class ProjectForm extends React.Component {
 
   handleDelete(e) {
     e.preventDefault();
-    this.props.destroyProject(this.props.currentProject.id).then(
-      this.props.fetchAllProjects()
-    ).then(
-      this.props.fetchTeamProjects(this.props.team.id)
-    ).then(
-      hashHistory.push('/dashboard')
-    );
+    this.props.destroyProject(this.props.currentProject.id);
+    hashHistory.push('/dashboard');
   }
 
   render() {
@@ -53,15 +54,15 @@ class ProjectForm extends React.Component {
       submitText = "Save Changes";
       single = "";
     } else {
-      formTitle = "New Team";
-      submitText = "Create Team";
+      formTitle = "New Project";
+      submitText = "Create Project";
       single = "btn-single ";
     }
     return (
       <div className="box white floating left-panel full-height flex col flex-half-single">
         <div className="edit-form col">
           <div className="flex flex-between flex-v-center">
-            <h3>Edit {currentProject.name}</h3>
+            <h3>{formTitle}</h3>
             <button
               onClick={() => hashHistory.push('/dashboard')}
               className="btn-float btn-single center-flex-content">

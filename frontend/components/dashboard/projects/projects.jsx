@@ -12,7 +12,9 @@ class Projects extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.team != nextProps.team) {
+    console.log(this.props);
+    console.log(nextProps);
+    if (this.props.team != nextProps.team || this.props.teamProjects.length != nextProps.teamProjects.length) {
       this.props.fetchTeamProjects(nextProps.team.id);
     }
   }
@@ -24,7 +26,7 @@ class Projects extends React.Component {
   }
 
   render() {
-    let { allProjects, teamProjects, team, children } = this.props;
+    let { allProjects, teamProjects, currentProject, team, children } = this.props;
     let projectsList, menuVisibility, menuArrow;
     if (this.state.menuVisible) {
       menuVisibility = ""; 
@@ -35,20 +37,26 @@ class Projects extends React.Component {
     }
     if (team.id) {
       projectsList = (
-        <div className="teams ">
+        <div className="teams">
           <div className="selected-container">
             <div onClick={this.toggleMenu} className="selected btn-dropdown">
               <strong><i className={`fa ${menuArrow} fa-fw fa-lg`}></i>
-              {this.props.currentProject.name}</strong>
+              {currentProject.name || "Select a Project"}</strong>
             </div>
           </div>
           <ul className={`${menuVisibility}`}>
-            {teamProjects.map(project => (
+            <li>
+              <button
+                className="btn-dropdown center-flex-content"
+                onClick={() => hashHistory.push('/dashboard/project/new')}>
+                New Project <i className="fa fa-plus fa-fw"></i></button>
+              </li>
+            {teamProjects.length < 1 ?  (<li>No Projects Found for this Team</li>) : (teamProjects.map(project => (
               <ProjectListItem
                 setCurrentProject={this.props.setCurrentProject}
                 key={project.id}
                 project={project} />
-              )
+              ))
             )}
           </ul>
         </div>

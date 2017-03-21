@@ -6,3 +6,7 @@
 .striped:nth-of-type(odd) {
     background-color: rgba(125, 125, 125, 0.1);
 }
+
+.flex-start {
+    justify-content: flex-start;
+}

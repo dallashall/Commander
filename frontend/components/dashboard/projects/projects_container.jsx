@@ -20,6 +20,7 @@ const _initial_state = ({
 const mapStateToProps = (state = _initial_state, ownProps) => ({
   allProjects: values(state.project.allProjects),
   teamProjects: values(state.project.teamProjects),
+  currentProject: state.project.currentProject,
   team: state.team
 });
 
