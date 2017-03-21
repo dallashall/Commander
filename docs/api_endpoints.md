@@ -11,7 +11,6 @@
 | Users      | 'POST'   | '/api/users/'  | New User|
 | Users      | 'PATCH'  | '/api/users/:id'  | Update User|
 | Users      | 'DELETE'  | '/api/users/:id'  | Delete User|
-| Users      | 'GET'    | '/api/users/tasks' | Assigned tasks for user |
 | - | - | - | - |
 | Session    | 'POST'   | '/api/session' | Login |
 | Session    | 'DELETE' | '/api/session' | Logout |

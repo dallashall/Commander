@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
   namespace :api, defaults: {format: 'json'} do
-    get 'users/tasks', to: 'users#tasks'
     resources :users
 
     get 'teams/:id/projects', to: 'teams#projects'
