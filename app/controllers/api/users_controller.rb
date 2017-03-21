@@ -17,6 +17,12 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def task_assignments
+    debugger
+    @task_assignments = current_user.task_assignments
+    render '/api/task_assignments/index.json.jbuilder'
+  end
+
   def delete
     @user = current_user
     if @user

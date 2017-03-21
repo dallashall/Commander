@@ -5,7 +5,6 @@ class CreateTasks < ActiveRecord::Migration[5.0]
       t.integer :user_id, null: false
       t.string :name, null: false
       t.text :description
-      t.integer :statuses
 
       t.timestamps
     end

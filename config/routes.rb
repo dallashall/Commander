@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   namespace :api, defaults: {format: 'json'} do
+    get 'users/task_assignments', to: 'users#task_assignments'
     resources :users
 
     get 'teams/:id/projects', to: 'teams#projects'
@@ -14,7 +15,9 @@ Rails.application.routes.draw do
     resources :projects, only: [:show, :index, :create, :update, :destroy]
 
     resource :session, only: [:create, :destroy]
+    
     resources :tasks
+    resources :task_assignments
   end
 
   root 'root#index'

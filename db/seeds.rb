@@ -24,6 +24,12 @@ teams.each do |team, idx|
   names.sample(5).each { |name| TeamMember.create(user_id: User.find_by(username: name).id, team_id: new_team.id) }
 end
 
-Project.create(user_id: 1, team_id: 2, name: "Test Project 1", description: "Testing the things")
+Project.create(user_id: 1, team_id: 2, name: "Upgrade A/V Carts", description: "Clients are demanding up-to-date tech in our spaces.")
 Project.create(user_id: 1, team_id: 2, name: "Test Project 2", description: "Testing the things")
 Project.create(user_id: 1, team_id: 2, name: "Test Project 3", description: "Testing the things")
+
+Task.create(user_id: 2, project_id: 1, name: "Purchase Screens", statuses: [1], description: '70\" UHD TVs\nFind the lowest price, and purchase 10 screens')
+Task.create(user_id: 2, project_id: 1, name: "Purchase Adapters", statuses: [2], description: 'Research the 5 most popular adapters for A/V carts, and purchase a set for each cart (10)')
+
+TaskAssignment.create(user_id: 1, task_id: 1)
+TaskAssignment.create(user_id: 3, task_id: 2)

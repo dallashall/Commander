@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170321063714) do
+ActiveRecord::Schema.define(version: 20170321191445) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20170321063714) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.index ["name"], name: "index_projects_on_name", using: :btree
     t.index ["user_id", "name"], name: "index_projects_on_user_id_and_name", unique: true, using: :btree
     t.index ["user_id"], name: "index_projects_on_user_id", using: :btree
   end
@@ -37,13 +38,13 @@ ActiveRecord::Schema.define(version: 20170321063714) do
   end
 
   create_table "tasks", force: :cascade do |t|
-    t.integer  "project_id",  null: false
-    t.integer  "user_id",     null: false
-    t.string   "name",        null: false
+    t.integer  "project_id",               null: false
+    t.integer  "user_id",                  null: false
+    t.string   "name",                     null: false
     t.text     "description"
-    t.integer  "statuses"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.integer  "statuses",    default: [],              array: true
     t.index ["name"], name: "index_tasks_on_name", using: :btree
     t.index ["project_id"], name: "index_tasks_on_project_id", using: :btree
     t.index ["user_id"], name: "index_tasks_on_user_id", using: :btree
@@ -65,6 +66,7 @@ ActiveRecord::Schema.define(version: 20170321063714) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.index ["name"], name: "index_teams_on_name", using: :btree
     t.index ["user_id", "name"], name: "index_teams_on_user_id_and_name", unique: true, using: :btree
     t.index ["user_id"], name: "index_teams_on_user_id", using: :btree
   end

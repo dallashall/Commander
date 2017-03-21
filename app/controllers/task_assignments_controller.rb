@@ -1,2 +1,0 @@
-class TaskAssignmentsController < ApplicationController
-end
