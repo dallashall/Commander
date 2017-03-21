@@ -9,7 +9,9 @@
 | Controller | Method   | URL            | Notes |
 | ---------- | -------- | -------------- | ----- |
 | Users      | 'POST'   | '/api/users/'  | New User|
-| Users      | 'PATCH'  | '/api/users/'  | Update User|
+| Users      | 'PATCH'  | '/api/users/:id'  | Update User|
+| Users      | 'DELETE'  | '/api/users/:id'  | Delete User|
+| Users      | 'GET'    | '/api/users/tasks' | Assigned tasks for user |
 | - | - | - | - |
 | Session    | 'POST'   | '/api/session' | Login |
 | Session    | 'DELETE' | '/api/session' | Logout |
@@ -25,6 +27,7 @@
 | Teams    | 'PATCH' | '/api/teams/:id' | Update Team|
 | Teams    | 'GET' | '/api/teams/:id' | Show Team|
 | Teams    | 'DELETE' | '/api/teams/:id' | Delete Team|
+| Teams    | 'GET' | '/api/teams/:id/projects | Team Projects |
 | - | - | - | - |
 | Tasks   | 'GET'    | '/api/tasks' | Show all tasks |
 | Tasks    | 'POST' | '/api/tasks' | New Task|
