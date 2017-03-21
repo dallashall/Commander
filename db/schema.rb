@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170315212234) do
+ActiveRecord::Schema.define(version: 20170321063714) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,29 @@ ActiveRecord::Schema.define(version: 20170315212234) do
     t.datetime "updated_at",  null: false
     t.index ["user_id", "name"], name: "index_projects_on_user_id_and_name", unique: true, using: :btree
     t.index ["user_id"], name: "index_projects_on_user_id", using: :btree
+  end
+
+  create_table "task_assignments", force: :cascade do |t|
+    t.integer  "user_id",    null: false
+    t.integer  "task_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["task_id", "user_id"], name: "index_task_assignments_on_task_id_and_user_id", unique: true, using: :btree
+    t.index ["task_id"], name: "index_task_assignments_on_task_id", using: :btree
+    t.index ["user_id"], name: "index_task_assignments_on_user_id", using: :btree
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.integer  "project_id",  null: false
+    t.integer  "user_id",     null: false
+    t.string   "name",        null: false
+    t.text     "description"
+    t.integer  "statuses"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["name"], name: "index_tasks_on_name", using: :btree
+    t.index ["project_id"], name: "index_tasks_on_project_id", using: :btree
+    t.index ["user_id"], name: "index_tasks_on_user_id", using: :btree
   end
 
   create_table "team_members", force: :cascade do |t|
