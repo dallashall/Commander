@@ -51,15 +51,23 @@ export const fetchAllProjects = () => (dispatch) => {
   );
 };
 
-export const createProject = (project) => (dispatch) => {
-  return postProject(project).then(
+export const createProject = (formProject) => (dispatch) => {
+  return postProject(formProject).then(
     project => dispatch(receiveProject(project))
+  ).then(
+    res => dispatch(fetchTeamProjects(res.project.team_id)).then(
+      () => dispatch(selectProject(res.project.id))
+    )
   );
 };
 
-export const updateProject = (project) => (dispatch) => {
-  return patchProject(project).then(
+export const updateProject = (formProject) => (dispatch) => {
+  return patchProject(formProject).then(
     project => dispatch(receiveProject(project))
+  ).then(
+    res => dispatch(fetchTeamProjects(res.project.team_id)).then(
+      () => dispatch(selectProject(res.project.id))
+    )
   );
 };
 

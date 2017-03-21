@@ -1,4 +1,5 @@
 import React from 'react';
+import { hashHistory } from 'react-router';
 
 export default ({currentProject, children}) => {
   return (
@@ -14,6 +15,11 @@ export default ({currentProject, children}) => {
             </button>
           </div>
           <p>{currentProject.description}</p>
+          <button
+            className="btn btn-float btn-single"
+            onClick={() => hashHistory.push('/dashboard/project/edit')}>
+            Edit Project
+          </button>
         </div>
       </div>
       {children}

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     delete :team_members, to: 'team_members#destroy'
     resources :team_members, only: [:show, :index, :create]
     delete :projects, to: 'projects#destroy'
-    resources :projects, only: [:show, :index, :create]
+    resources :projects, only: [:show, :index, :create, :update, :destroy]
     resource :session, only: [:create, :destroy]
   end
 

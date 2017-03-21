@@ -74,14 +74,16 @@ export default ({store}) => {
             <Route
               path="project"
               component={ProjectsDetailContainer}>
-              <Route
-                path="edit"
-                component={ProjectFormContainer} />
-                
-              <Route
-                path="new"
-                component={ProjectFormContainer} />
             </Route>
+            
+            <Route
+              path="project/edit"
+              edit={true}
+              component={ProjectFormContainer} />
+              
+            <Route
+              path="project/new"
+              component={ProjectFormContainer} />
           </Route>
         </Route>
       </Router>

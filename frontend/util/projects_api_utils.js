@@ -26,7 +26,7 @@ export const getTeamProjects = (teamId) => {
 export const patchProject = (project) => (
   $.ajax({
     method: "PATCH",
-    url: '/api/projects',
+    url: `/api/projects/${project.id}`,
     data: { project }
   })
 );
@@ -42,6 +42,6 @@ export const postProject = (project) => (
 export const deleteProject = (projectId) => (
   $.ajax({
     method: "DELETE",
-    url: `/api/projects/:id`
+    url: `/api/projects/${projectId}`
   })
 );

@@ -10,8 +10,6 @@ class TeamsForm extends React.Component {
     this.handleDelete = this.handleDelete.bind(this);
   }
 
-  component
-
   handleChange(prop){
     return (e) => {
       switch (prop) {
