@@ -30,9 +30,12 @@ class TaskDetail extends React.Component {
     );
   }
   
-  handleDelete() {
-
-  }
+  handleDelete(e) {
+    e.preventDefault();
+    this.props.destroyTask(this.state.id).then(
+      this.props.closeTask()
+    );
+  };
 
   toggleStatus(num) {
     let newStatuses = merge({}, this.state.statuses);
