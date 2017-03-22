@@ -12,8 +12,6 @@ class Projects extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log(this.props);
-    console.log(nextProps);
     if (this.props.team != nextProps.team || this.props.teamProjects.length != nextProps.teamProjects.length) {
       this.props.fetchTeamProjects(nextProps.team.id);
     }
