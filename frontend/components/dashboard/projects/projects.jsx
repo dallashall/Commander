@@ -9,6 +9,7 @@ class Projects extends React.Component {
       menuVisibile: false
     };
     this.toggleMenu = this.toggleMenu.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -22,6 +23,13 @@ class Projects extends React.Component {
       menuVisible: !this.state.menuVisible
     });
   }
+
+  handleClick(path) {
+    return (e) => {
+      this.toggleMenu();
+      hashHistory.push(`/dashboard/project/new`);
+    };
+  }  
 
   render() {
     let { allProjects, teamProjects, currentProject, team, children } = this.props;
@@ -46,12 +54,13 @@ class Projects extends React.Component {
             <li>
               <button
                 className="btn-dropdown center-flex-content"
-                onClick={() => hashHistory.push('/dashboard/project/new')}>
+                onClick={this.handleClick("new")}>
                 New Project <i className="fa fa-plus fa-fw"></i></button>
               </li>
             {teamProjects.length < 1 ?  (<li>No Projects Found for this Team</li>) : (teamProjects.map(project => (
               <ProjectListItem
                 setCurrentProject={this.props.setCurrentProject}
+                toggleMenu={this.toggleMenu}
                 key={project.id}
                 project={project} />
               ))
