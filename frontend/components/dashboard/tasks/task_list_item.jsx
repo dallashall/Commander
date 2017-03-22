@@ -3,7 +3,6 @@ import merge from 'lodash/merge';
 
 export default ({ task, updateTask, viewTask, editTask, newTask, setSelectedTask }) => {
   let newStatuses = merge({}, task.statuses) || {};
-  console.log(newStatuses);
   let updatedTask = merge({}, task);
   const toggleStatus = (num) => (e) => {
     if (newStatuses[num]) {

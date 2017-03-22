@@ -14,7 +14,6 @@ import {
 import TaskDetail from './task_detail';
 
 const mapStateToProps = (state, ownProps) => {
-  console.log(ownProps);
   let selectedTask = ownProps.type === "view" ||
     ownProps.type === "edit" ?
     state.tasks.selectedTask : { name: "", description: "", statuses: {}, id: undefined };
@@ -28,9 +27,7 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  console.log(ownProps);
   let formAction = ownProps.type === "edit" ? updateTask : createTask;
-  console.log(formAction);
   return {
     fetchTask: (taskId) => dispatch(fetchTask(taskId)),
     destroyTask: (taskId) => dispatch(destroyTask(taskId)),
