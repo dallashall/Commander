@@ -24,6 +24,7 @@ class TaskDetail extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    this.state.project_id = this.props.currentProject.id;
     this.props.formAction(this.state).then(
       () => this.props.viewTask()
     );
