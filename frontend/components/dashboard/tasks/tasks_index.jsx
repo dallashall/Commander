@@ -12,7 +12,6 @@ class TasksIndex extends React.Component {
   componentWillReceiveProps(nextProps) {
     if (this.props.currentProject.id != nextProps.currentProject.id) {
       this.props.fetchAllTasks(nextProps.currentProject.id);
-      console.log(nextProps.currentProject.id);
     }
   }
   render() {
@@ -24,7 +23,6 @@ class TasksIndex extends React.Component {
       destroyTask,
       currentProject
     } = this.props;
-    console.log(updateTask);
     return (
       <div className="task-list">
         <ul>

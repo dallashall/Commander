@@ -12,7 +12,6 @@ export default ({ task, updateTask }) => {
     }
     updatedTask.statuses = Object.keys(newStatuses);
     updateTask(updatedTask);
-    console.log(updatedTask);
   }
   let statuses = [1, 2, 3, 4].map(num => (
     <button
