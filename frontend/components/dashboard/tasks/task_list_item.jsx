@@ -1,7 +1,7 @@
 import React from 'react';
 import merge from 'lodash/merge';
 
-export default ({ task, updateTask }) => {
+export default ({ task, updateTask, viewTask, editTask, newTask, setSelectedTask }) => {
   let newStatuses = merge({}, task.statuses);
   let updatedTask = merge({}, task);
   const toggleStatus = (num) => (e) => {
@@ -13,6 +13,12 @@ export default ({ task, updateTask }) => {
     updatedTask.statuses = Object.keys(newStatuses);
     updateTask(updatedTask);
   }
+
+  const view = (taskId) => (e) => {
+    setSelectedTask(taskId).then(
+      () => viewTask()
+    );
+  };
   let statuses = [1, 2, 3, 4].map(num => (
     <button
       key={num}  
@@ -21,6 +27,9 @@ export default ({ task, updateTask }) => {
   ));
   
   return (
-    <li><h4>{task.name}</h4><span>{statuses}</span></li>
+    <li
+      className="floating"
+      onClick={view(task.id)}>
+      <h4>{task.name}</h4><span>{statuses}</span></li>
   );
 }

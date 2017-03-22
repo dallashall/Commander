@@ -3,8 +3,18 @@
     li {
         display: flex;
         justify-content: space-between;
+        align-items: center;
         border-top: 1px solid lightgrey;
-        padding: 10px 0;
+        padding: 8px;
+        margin: 5px 0;
+    }
+    .floating:hover {
+        box-shadow: $shadow;
+        cursor: pointer;
+    }
+
+    .floating:active {
+        box-shadow: $dark-shadow;
     }
     span {
         display: flex;
@@ -17,6 +27,7 @@
     box-shadow: $light-shadow;
     display: flex;
     margin: 3px;
+    cursor: pointer;
 }
 
 [class^="status"]:hover {
