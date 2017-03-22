@@ -16,13 +16,13 @@ class ProjectsDetail extends React.Component {
     return () => {
       const details = type ? (<TaskDetailContainer
         closeTask={this.setDetailView(undefined)}  
-        editTask={ this.setDetailView("edit") }
+        editTask={this.setDetailView("edit")}
+        viewTask={this.setDetailView("view")}
         type={type} />) : undefined;
         
       this.setState({
         details
       });
-      console.log(type);
     }
   } 
   render() {

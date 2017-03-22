@@ -1,3 +1,28 @@
+.task-detail {
+  ul {
+    margin: 0 10px;
+  }
+
+  .form-title {
+    margin-bottom: 20px;
+  }
+
+  .task-edit {
+    margin: 0;
+    display: block;
+    width: 100px;
+    height: 40px;
+  }
+
+  li {
+    margin: 0 0 8px 0;
+    display: flex;
+    overflow: visible;
+    button {
+      margin: 1px 10px 0 3px;
+    }
+  }
+}
 .task-list {
     margin-top: 15px;
     li {

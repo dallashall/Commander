@@ -21,6 +21,7 @@ export default (state = _initial_state, action) => {
 
     case RECEIVE_TASK:
       newState.allTasks[action.task.id] = action.task;
+      newState.selectedTask = action.task;
       return newState;
 
     case SELECT_TASK:

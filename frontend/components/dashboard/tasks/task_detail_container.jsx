@@ -17,7 +17,7 @@ const mapStateToProps = (state, ownProps) => {
   console.log(ownProps);
   let selectedTask = ownProps.type === "view" ||
     ownProps.type === "edit" ?
-    state.tasks.selectedTask : { name: "", description: "", statuses: {} };
+    state.tasks.selectedTask : { name: "", description: "", statuses: {}, id: undefined };
   return {
     teamMembers: state.teamMembers.teamMembers,
     currentProject: state.project.currentProject,
@@ -27,14 +27,20 @@ const mapStateToProps = (state, ownProps) => {
   }
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
-  fetchTask: (taskId) => dispatch(fetchTask(taskId)),
-  destroyTask: (taskId) => dispatch(destroyTask(taskId)),
-  updateTask: (task) => dispatch(updateTask(task)),
-  createTask: (task) => dispatch(createTask),
-  fetchAllTaskAssignments: (taskId) => dispatch(fetchAllTaskAssignments(taskId)),
-  createTaskAssignment: (taskAssignment) => dispatch(createTaskAssignment(taskAssignment)),
-  removeTaskAssignment: (taskAssignmentId) => dispatch(removeTaskAssignment(taskAssignmentId))
-});
+const mapDispatchToProps = (dispatch, ownProps) => {
+  console.log(ownProps);
+  let formAction = ownProps.type === "edit" ? updateTask : createTask;
+  console.log(formAction);
+  return {
+    fetchTask: (taskId) => dispatch(fetchTask(taskId)),
+    destroyTask: (taskId) => dispatch(destroyTask(taskId)),
+    updateTask: (task) => dispatch(updateTask(task)),
+    createTask: (task) => dispatch(createTask),
+    formAction: (task) => dispatch(formAction(task)),
+    fetchAllTaskAssignments: (taskId) => dispatch(fetchAllTaskAssignments(taskId)),
+    createTaskAssignment: (taskAssignment) => dispatch(createTaskAssignment(taskAssignment)),
+    removeTaskAssignment: (taskAssignmentId) => dispatch(removeTaskAssignment(taskAssignmentId))
+  }
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(TaskDetail);

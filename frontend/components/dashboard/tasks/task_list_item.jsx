@@ -2,7 +2,8 @@ import React from 'react';
 import merge from 'lodash/merge';
 
 export default ({ task, updateTask, viewTask, editTask, newTask, setSelectedTask }) => {
-  let newStatuses = merge({}, task.statuses);
+  let newStatuses = merge({}, task.statuses) || {};
+  console.log(newStatuses);
   let updatedTask = merge({}, task);
   const toggleStatus = (num) => (e) => {
     if (newStatuses[num]) {
@@ -10,7 +11,7 @@ export default ({ task, updateTask, viewTask, editTask, newTask, setSelectedTask
     } else {
       newStatuses[num] = true;
     }
-    updatedTask.statuses = Object.keys(newStatuses);
+    updatedTask.statuses = Object.keys(newStatuses) || [];
     updateTask(updatedTask);
   }
 
@@ -22,14 +23,13 @@ export default ({ task, updateTask, viewTask, editTask, newTask, setSelectedTask
   let statuses = [1, 2, 3, 4].map(num => (
     <button
       key={num}  
-      className={task.statuses[num] ? `status-${num}` : "status-blank"}
+      className={newStatuses[num] ? `status-${num}` : "status-blank"}
       onClick={toggleStatus(num)}></button>
   ));
   
   return (
     <li
-      className="floating"
-      onClick={view(task.id)}>
-      <h4>{task.name}</h4><span>{statuses}</span></li>
+      className="floating">
+      <h4 className="flex flex-1" onClick={view(task.id)}>{task.name}</h4> <span>{statuses}</span></li>
   );
 }

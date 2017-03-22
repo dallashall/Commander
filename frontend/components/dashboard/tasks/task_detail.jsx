@@ -5,21 +5,48 @@ class TaskDetail extends React.Component {
   constructor(props) {
     super(props);
     this.state = merge({}, this.props.selectedTask)
+    this.toggleStatus = this.toggleStatus.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.state.id != nextProps.selectedTask.id) {
+    if (this.state.id != nextProps.selectedTask.id || this.state.statuses != nextProps.selectedTask.statuses) {
       this.setState(nextProps.selectedTask);
     }
   }
 
-  handleChange() {
-    
+  handleChange(prop) {
+    return (e) => {
+      this.setState({ [prop]: e.target.value });
+    }
   }
 
-  handleSubmit() {
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.formAction(this.state).then(
+      () => this.props.viewTask()
+    );
+  }
+  
+  handleDelete() {
 
   }
+
+  toggleStatus(num) {
+    let newStatuses = merge({}, this.state.statuses);
+    let updatedTask = merge({}, this.state);
+    return (e) => {
+      if (newStatuses[num]) {
+        delete (newStatuses[num]);
+      } else {
+        newStatuses[num] = true;
+      }
+      updatedTask.statuses = Object.keys(newStatuses);
+      console.log(Object.keys(newStatuses));
+      this.props.updateTask(updatedTask);
+    }
+  }  
 
   render() {
     let {
@@ -40,13 +67,25 @@ class TaskDetail extends React.Component {
       removeTaskAssignment
     } = this.props;
 
-    let formTitle, body, deleteButton, submitText, single;
+    let formTitle, body, deleteButton, submitText, single, statuses;
+    const statusNames = {
+      1: "Not Started",
+      2: "In-Progress",
+      3: "High Priority",
+      4: "Completed"
+    }
+    statuses = [1, 2, 3, 4].map(num => (
+    <li key={num}><button  
+      className={this.state.statuses[num] ? `status-${num}` : "status-blank"}
+      onClick={this.toggleStatus(num)}></button> <h4>{statusNames[num]}</h4></li>
+    ));
 
     if (type === "view") {
-      formTitle = "Details";
+      formTitle = selectedTask.name;
       body = (
         <div>
-          <button className="btn btn-float" onClick={editTask}>Edit</button>  
+          <div className="flex row flex-between"><span className="flex row">Status: <ul>{statuses}</ul></span><button className="btn btn-float task-edit" onClick={editTask}>Edit</button></div>
+          <h4>Description:</h4>
           <p>{selectedTask.description}</p>
         </div>
       );
@@ -83,8 +122,8 @@ class TaskDetail extends React.Component {
     }
     return (
       <div className="box white floating left-panel full-height flex col flex-half-single">
-        <div className="edit-form col">
-          <div className="flex flex-between flex-v-center">
+        <div className="edit-form task-detail col">
+          <div className="flex flex-between flex-v-center form-title">
             <h3>{formTitle}</h3>
             <button
               onClick={closeTask}
