@@ -1,18 +1,37 @@
 import React from 'react';
+import TaskListItem from './task_list_item';
 
-export default ({
-  tasks,
-  selectedTask,
-  fetchAllTasks,
-  fetchTask,
-  createTask,
-  destroyTask
-}) => {
-  return (
-    <div>
-      <ul>
-        
-      </ul>
-    </div>
-  )
+class TasksIndex extends React.Component {
+
+  // componentDidMount() {
+  //   if (this.props.currentProject.id) {
+  //     this.props.fetchAllTasks(this.props.currentProject.id);
+  //   }
+  // }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.currentProject.id != nextProps.currentProject.id) {
+      this.props.fetchAllTasks(nextProps.currentProject.id);
+      console.log(nextProps.currentProject.id);
+    }
+  }
+  render() {
+    let {
+      tasks,
+      selectedTask,
+      fetchAllTasks,
+      updateTask,
+      destroyTask,
+      currentProject
+    } = this.props;
+    console.log(updateTask);
+    return (
+      <div className="task-list">
+        <ul>
+          {tasks.map(task => <TaskListItem updateTask={updateTask} key={task.id} task={task} />)}
+        </ul>
+      </div>
+    )
+  };
 }
+export default TasksIndex;

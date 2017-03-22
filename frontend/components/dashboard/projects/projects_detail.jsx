@@ -1,5 +1,6 @@
 import React from 'react';
 import { hashHistory } from 'react-router';
+import TasksContainer from '../tasks/tasks_container';
 
 export default ({currentProject, children}) => {
   return (
@@ -21,6 +22,7 @@ export default ({currentProject, children}) => {
             Edit Project
           </button>
         </div>
+        <TasksContainer />
       </div>
       {children}
     </section>

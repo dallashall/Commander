@@ -1,0 +1,44 @@
+.task-list {
+    margin-top: 15px;
+    li {
+        display: flex;
+        justify-content: space-between;
+        border-top: 1px solid lightgrey;
+        padding: 10px 0;
+    }
+    span {
+        display: flex;
+    }
+}
+
+[class^="status"] {
+    width: 20px;
+    height: 20px;
+    box-shadow: $light-shadow;
+    display: flex;
+    margin: 3px;
+}
+
+[class^="status"]:hover {
+    box-shadow: $shadow;
+}
+
+[class^="status"]:active {
+    box-shadow: $dark-shadow;
+}
+
+.status-1 {
+    background-color: rgb(200, 60, 10);
+}
+
+.status-2 {
+    background-color: $orange;
+}
+
+.status-3 {
+    background-color: rgb(120, 180, 255);
+}
+
+.status-4 {
+    background-color: rgb(50, 230, 100);
+}

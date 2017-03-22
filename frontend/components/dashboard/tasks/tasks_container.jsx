@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import values from 'lodash/values';
 import {
   fetchAllTasks,
   fetchTask,
@@ -12,20 +13,22 @@ import TasksIndex from './tasks_index';
 const _initial_state = {
   tasks: {
     allTasks: {},
-    selectedTask: {}
+    selectedTask: {},
+    currentProject: {}
   }
 }
 
 const mapStateToProps = (state = _initial_state, ownProps) => ({
-  tasks: state.tasks.allTasks,
-  selectedTask: state.tasks.selectedTask
+  tasks: values(state.tasks.allTasks),
+  selectedTask: state.tasks.selectedTask,
+  currentProject: state.project.currentProject
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  fetchAllTasks: () => dispatch(fetchAllTasks()),
+  fetchAllTasks: (projectId) => dispatch(fetchAllTasks(projectId)),
   fetchTask: (taskId) => dispatch(fetchTask(taskId)),
   createTask: (task) => dispatch(createTask(task)),
-  updateTask: (task) => dispatch(updateTask),
+  updateTask: (task) => dispatch(updateTask(task)),
   destroyTask: (taskId) => dispatch(destroyTask(taskId))
 })
 
