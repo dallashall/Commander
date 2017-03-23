@@ -4,7 +4,7 @@
   "description": "https://taskcommander.herokuapp.com",
   "main": "index.js",
   "scripts": {
-    "postinstall": "webpack"
+    "heroku-postbuild": "webpack --config webpack.config.prod.js"
   },
   "repository": {
     "type": "git",
@@ -38,8 +38,5 @@
     "redux-devtools-extension": "^2.13.0",
     "redux-thunk": "^2.2.0",
     "webpack": "^2.2.1"
-  },
-  "scripts": {
-    "heroku-postbuild": "webpack --config webpack.config.prod.js"
   }
 }
