@@ -10,7 +10,8 @@ export default ({ task, updateTask, viewTask, editTask, newTask, setSelectedTask
     } else {
       newStatuses[num] = true;
     }
-    updatedTask.statuses = Object.keys(newStatuses) || [];
+    updatedTask.statuses = Object.keys(newStatuses).length ? Object.keys(newStatuses) : [""];
+    console.log (updatedTask.statuses)
     updateTask(updatedTask);
   }
 

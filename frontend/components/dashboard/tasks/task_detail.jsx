@@ -46,7 +46,7 @@ class TaskDetail extends React.Component {
       } else {
         newStatuses[num] = true;
       }
-      updatedTask.statuses = Object.keys(newStatuses);
+      updatedTask.statuses = Object.keys(newStatuses).length ? Object.keys(newStatuses) : [""];
       this.props.updateTask(updatedTask);
     }
   }  
