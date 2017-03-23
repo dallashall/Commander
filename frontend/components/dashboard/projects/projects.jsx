@@ -33,7 +33,7 @@ class Projects extends React.Component {
 
   render() {
     let { allProjects, teamProjects, currentProject, team, children } = this.props;
-    let projectsList, menuVisibility, menuArrow;
+    let projectsList, menuVisibility, menuArrow, projectName;
     if (this.state.menuVisible) {
       menuVisibility = ""; 
       menuArrow = "fa-caret-down";
@@ -41,13 +41,18 @@ class Projects extends React.Component {
       menuVisibility = "hidden";
       menuArrow = "fa-caret-right";
     }
+    if (currentProject.team_id != team.id) {
+      projectName = "";
+    } else {
+      projectName = currentProject.name;
+    }
     if (team.id) {
       projectsList = (
         <div className="teams">
           <div className="selected-container">
             <div onClick={this.toggleMenu} className="selected btn-dropdown">
               <strong><i className={`fa ${menuArrow} fa-fw fa-lg`}></i>
-              {currentProject.name || "Select a Project"}</strong>
+              Projects</strong><span>{projectName}</span>
             </div>
           </div>
           <ul className={`${menuVisibility}`}>

@@ -13,7 +13,7 @@
  *= require_self
  */
 
-@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700|Oswald:200,300,400');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700|Oswald:200,300,400');
 @import "./reset";
 @import "./colors";
 @import "./shadows";
@@ -32,4 +32,5 @@
 @import "./components/projects";
 @import "./components/tasks";
 @import "./components/team_members";
+@import "./components/team_member_search";
 @import "./components/utilities";

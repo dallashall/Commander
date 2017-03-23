@@ -25,6 +25,13 @@
 }
 .task-list {
     margin-top: 15px;
+    .task-header {
+        border-bottom: 1px solid lightgrey;
+        font-family: "Oswald", sans-serif;
+    }
+    ul {
+        margin: 15px 0;
+    }
     li {
         display: flex;
         justify-content: space-between;
@@ -32,6 +39,18 @@
         border-top: 1px solid lightgrey;
         padding: 8px;
         margin: 5px 0;
+    }
+    .new-task-button {
+        h4{
+            font-weight: 300;
+            text-transform: uppercase;
+        }
+    }
+    .new-task-button:hover {
+        background-color: rgb(240, 255, 240);
+    }
+    .new-task-button:active {
+        background-color: rgb(230,255,230);
     }
     .floating:hover {
         box-shadow: $shadow;
@@ -43,6 +62,7 @@
     }
     span {
         display: flex;
+        align-items: center;
     }
 }
 

@@ -1,0 +1,12 @@
+.team-member-search {
+  ul {
+    box-shadow: $inset-shadow;
+    border-radius: 3px;
+  }
+  li {
+    padding: 0 8px;
+    .btn {
+      width: 70px;
+    }
+  }
+}

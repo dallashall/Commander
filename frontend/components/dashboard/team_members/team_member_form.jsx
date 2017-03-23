@@ -78,7 +78,7 @@ class TeamMemberForm extends React.Component {
     
     return (
       <div className="box white floating left-panel full-height flex col flex-half-single">
-        <div className="edit-form col">
+        <div className="edit-form col team-member-search">
           <div className="flex flex-between flex-v-center flex-0-1">
             <h3>Edit Team Members</h3>
             <button

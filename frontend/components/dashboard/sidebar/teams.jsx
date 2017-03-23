@@ -70,15 +70,11 @@ class Teams extends React.Component {
     }
     return (
       <div
-      className={"teams pointer"}>
-        <div className="selected-container">
+      className={"teams"}>
+        <div className="selected-container pointer">
           <div onClick={this.toggleMenu} className="selected btn-dropdown">
             <strong><i className={`fa ${menuArrow} fa-fw fa-lg`}></i>
-            {selectedTeam.name}</strong> <span>{selectedTeam.owner.username}</span>
-          </div>
-          <div onClick={this.editClick} className={`btn btn-float tooltip ${editVisibility}`}>
-            <i className="fa fa-pencil-square-o fa-lg fa-fw" />
-            <div className="tooltip-text">Edit Team</div>
+            Teams</strong> <span>{selectedTeam.name}</span>
           </div>
         </div>
         <ul

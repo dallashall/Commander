@@ -30,8 +30,9 @@ class TasksIndex extends React.Component {
     } = this.props;
     return (
       <div className="task-list">
+      <span className="flex-between task-header"><h3>Tasks:</h3>Click on a Task's Name for Details</span>
         <ul>
-          <li className="floating" onClick={newTask}><h4>Create New Task</h4></li>  
+          <li className="floating new-task-button" onClick={newTask}><h4>Create New Task</h4><i className="fa fa-plus fa-fw" /></li>  
           {tasks.map(task => (
             <TaskListItem
               updateTask={updateTask}

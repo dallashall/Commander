@@ -6,8 +6,8 @@ html, body, div, form, input, textarea, strong, small, h1, h2, h3, h4, h5, h6, i
   border: none;
   margin: 0;
   padding: 0;
-  font-family: 'Libre Baskerville', serif;
-  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+  font-weight: normal;
   font-size: 14px;
   box-sizing: border-box;
 }
@@ -19,6 +19,14 @@ i {
 html, body {
   height: 100%;
   overflow: hidden;
+}
+
+button:active {
+  border: none;
+  outline:none;
+}
+button:focus {
+  outline:none;
 }
 
 #root, #root > div {

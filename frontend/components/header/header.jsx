@@ -11,7 +11,7 @@ class Header extends React.Component{
       hashHistory.push('/login');
     }
   }
-
+  
   handleLogout () {
     this.props.logout();
   }
@@ -19,10 +19,16 @@ class Header extends React.Component{
   render() {
     let {currentUser} = this.props;
     let username = currentUser ? currentUser.username : "";
+    let editVisibility = currentUser.id === this.props.team.owner.id ? "" : "hidden";
     return (
       <nav className={"top-bar"}>
-        <button className="btn-text btn-bars" onClick={this.handleLogout.bind(this)}>Log Out</button>
-        <h3>{username}</h3>
+        <span><h3>{this.props.team.name} <small>{this.props.team.owner.username}</small></h3>
+          <button onClick={() => hashHistory.push('/dashboard/teams/edit')} className={`btn btn-text btn-bars ${editVisibility}`}>
+          Edit Team</button></span>
+        <span>
+          <button className="btn-text btn-bars" onClick={this.handleLogout.bind(this)}>Log Out</button>
+          <h3>{username}</h3>
+        </span>
       </nav>
     );
   }

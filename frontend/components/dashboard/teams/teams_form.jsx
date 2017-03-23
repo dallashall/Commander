@@ -10,6 +10,12 @@ class TeamsForm extends React.Component {
     this.handleDelete = this.handleDelete.bind(this);
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (this.props.team.id != nextProps.team.id) {
+      this.setState(nextProps.team);
+    }
+  }
+
   handleChange(prop){
     return (e) => {
       switch (prop) {
