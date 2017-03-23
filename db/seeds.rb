@@ -28,8 +28,8 @@ Project.create(user_id: 1, team_id: 2, name: "Upgrade A/V Carts", description: "
 Project.create(user_id: 1, team_id: 2, name: "Test Project 2", description: "Testing the things")
 Project.create(user_id: 1, team_id: 2, name: "Test Project 3", description: "Testing the things")
 
-Task.create(user_id: 2, project_id: 1, name: "Purchase Screens", statuses: [1], description: '70\" UHD TVs\nFind the lowest price, and purchase 10 screens')
-Task.create(user_id: 2, project_id: 1, name: "Purchase Adapters", statuses: [2], description: 'Research the 5 most popular adapters for A/V carts, and purchase a set for each cart (10)')
+Task.create(user_id: 2, project_id: 1, name: "Purchase Screens", status: 1, description: '70\" UHD TVs\nFind the lowest price, and purchase 10 screens')
+Task.create(user_id: 2, project_id: 1, name: "Purchase Adapters", status: 2, description: 'Research the 5 most popular adapters for A/V carts, and purchase a set for each cart (10)')
 
 TaskAssignment.create(user_id: 1, task_id: 1)
 TaskAssignment.create(user_id: 3, task_id: 2)

@@ -6,13 +6,26 @@ import {
 } from '../actions/teams_actions';
 
 const _initial_state = {
-  "0": {
-    name: "",
-    description: "",
-    id: "",
-    owner: {
-      username: "",
-      id: ""
+  teams: {
+    "0": {
+      name: "",
+      description: "",
+      id: "",
+      owner: {
+        username: "",
+        id: ""
+      }
+    }
+  },
+  my_teams: {
+    "0": {
+      name: "",
+      description: "",
+      id: "",
+      owner: {
+        username: "",
+        id: ""
+      }
     }
   }
 };
@@ -25,10 +38,10 @@ export default (state = _initial_state, action) => {
       newState = action.teams;
       return newState;
     case RECEIVE_TEAM:
-      newState[action.team.id] = action.team
+      newState.my_teams[action.team.id] = action.team;
       return newState;
     case REMOVE_TEAM:
-      delete(newState[action.id]);
+      delete(newState.my_teams[action.id]);
       return newState;
     default:
       return state

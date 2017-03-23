@@ -39,10 +39,14 @@
             padding: 0 15px;
             height: 100%;
         }
+        .btn-bars:last-of-type {
+            border-left: none;
+        }
     }
     h3 {
         padding: 0px 15px;
     }
+
 }
 
 .main-area {

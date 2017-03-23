@@ -11,7 +11,7 @@ class TaskDetail extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.state.id != nextProps.selectedTask.id || this.state.statuses != nextProps.selectedTask.statuses) {
+    if (this.state.id != nextProps.selectedTask.id || this.state.status != nextProps.selectedTask.status) {
       this.setState(nextProps.selectedTask);
     }
   }
@@ -38,15 +38,15 @@ class TaskDetail extends React.Component {
   };
 
   toggleStatus(num) {
-    let newStatuses = merge({}, this.state.statuses);
+    let newStatus = this.state.status;
     let updatedTask = merge({}, this.state);
     return (e) => {
-      if (newStatuses[num]) {
-        delete (newStatuses[num]);
+      if (newStatus === num) {
+        return;
       } else {
-        newStatuses[num] = true;
+        newStatus = num;
       }
-      updatedTask.statuses = Object.keys(newStatuses).length ? Object.keys(newStatuses) : [""];
+      updatedTask.status = newStatus;
       this.props.updateTask(updatedTask);
     }
   }  
@@ -73,13 +73,13 @@ class TaskDetail extends React.Component {
     let formTitle, body, deleteButton, submitText, single, statuses;
     const statusNames = {
       1: "Not Started",
-      2: "In-Progress",
-      3: "High Priority",
+      2: "In-Progress (Problems)",
+      3: "In-Progress",
       4: "Completed"
     }
     statuses = [1, 2, 3, 4].map(num => (
     <li key={num}><button  
-      className={this.state.statuses[num] ? `status-${num}` : "status-blank"}
+      className={this.state.status === num ? `status-${num}` : `status-blank-${num}`}
       onClick={this.toggleStatus(num)}></button> <h4>{statusNames[num]}</h4></li>
     ));
 

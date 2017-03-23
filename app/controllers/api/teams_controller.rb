@@ -39,7 +39,8 @@ class Api::TeamsController < ApplicationController
   end
 
   def index
-    @teams = current_user.teams
+    @teams = current_user.teams.where("teams.user_id != #{current_user.id}")
+    @my_teams = current_user.teams.where(user_id: current_user.id)
   end
 
   private

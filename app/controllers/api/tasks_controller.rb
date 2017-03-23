@@ -39,7 +39,7 @@ class Api::TasksController < ApplicationController
   end
 
   def task_params
-    data = params.require(:task).permit(:project_id, :name, :description, statuses: [])
+    data = params.require(:task).permit(:project_id, :name, :description, :status)
     data[:user_id] = current_user.id
     data
   end

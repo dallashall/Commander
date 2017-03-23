@@ -10,8 +10,4 @@ const mapStateToProps = (state = _initial_state, ownProps) => {
   return { currentProject: state.project.currentProject };
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
-  test: () => console.log("container test")
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(ProjectsDetail);
+export default connect(mapStateToProps, null)(ProjectsDetail);

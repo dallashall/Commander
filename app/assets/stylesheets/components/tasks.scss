@@ -70,9 +70,23 @@
     width: 20px;
     height: 20px;
     box-shadow: $light-shadow;
-    display: flex;
+    display: block;
     margin: 3px;
     cursor: pointer;
+}
+
+
+.status-blank-1:hover {
+    background-color: $status-1-hover;
+}
+.status-blank-2:hover {
+    background-color: $status-2-hover;
+}
+.status-blank-3:hover {
+    background-color: $status-3-hover;
+}
+.status-blank-4:hover {
+    background-color: $status-4-hover;
 }
 
 [class^="status"]:hover {
@@ -84,17 +98,17 @@
 }
 
 .status-1 {
-    background-color: rgb(200, 60, 10);
+    background-color: $status-1;
 }
 
 .status-2 {
-    background-color: $orange;
+    background-color: $status-2;
 }
 
 .status-3 {
-    background-color: rgb(120, 180, 255);
+    background-color: $status-3;
 }
 
 .status-4 {
-    background-color: rgb(50, 230, 100);
+    background-color: $status-4;
 }

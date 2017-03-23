@@ -5,10 +5,6 @@
     json.user_id task.user_id
     json.name task.name
     json.description task.description
-    json.set! :statuses do
-      task.statuses.each do |status|
-        json.set! status, true
-      end
-    end
+    json.status task.status
   end
 end

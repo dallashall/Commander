@@ -60,6 +60,14 @@
     color: white;
 }
 
+.red:hover {
+    background-color: rgb(190, 10, 10);
+}
+
+.red:active {
+    background-color: rgb(140, 5, 5);
+}
+
 .pointer {
     cursor: pointer;
 }

@@ -38,13 +38,13 @@ ActiveRecord::Schema.define(version: 20170321191445) do
   end
 
   create_table "tasks", force: :cascade do |t|
-    t.integer  "project_id",               null: false
-    t.integer  "user_id",                  null: false
-    t.string   "name",                     null: false
+    t.integer  "project_id",              null: false
+    t.integer  "user_id",                 null: false
+    t.string   "name",                    null: false
     t.text     "description"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-    t.integer  "statuses",    default: [],              array: true
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.integer  "status",      default: 1
     t.index ["name"], name: "index_tasks_on_name", using: :btree
     t.index ["project_id"], name: "index_tasks_on_project_id", using: :btree
     t.index ["user_id"], name: "index_tasks_on_user_id", using: :btree

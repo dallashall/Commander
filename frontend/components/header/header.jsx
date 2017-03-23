@@ -17,14 +17,20 @@ class Header extends React.Component{
   }
   
   render() {
+    let { owner } = this.props.team;
     let {currentUser} = this.props;
     let username = currentUser ? currentUser.username : "";
     let editVisibility = currentUser.id === this.props.team.owner.id ? "" : "hidden";
+    let teamCaptain = owner.username ? `TEAM CAPTAIN: ${owner.username}` : "";
     return (
       <nav className={"top-bar"}>
-        <span><h3>{this.props.team.name} <small>{this.props.team.owner.username}</small></h3>
+        <span><h3>{this.props.team.name} <small>{teamCaptain}</small></h3>
           <button onClick={() => hashHistory.push('/dashboard/teams/edit')} className={`btn btn-text btn-bars ${editVisibility}`}>
-          Edit Team</button></span>
+            Edit Team</button>
+          <button onClick={() => hashHistory.push('/dashboard/team_members/edit')} className={`btn btn-text btn-bars ${editVisibility}`}>
+            Edit Team Members</button>
+        
+        </span>
         <span>
           <button className="btn-text btn-bars" onClick={this.handleLogout.bind(this)}>Log Out</button>
           <h3>{username}</h3>

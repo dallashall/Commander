@@ -49,16 +49,18 @@ class TeamsForm extends React.Component {
   }
 
   render() {
-    let deleteButton, formTitle, single, editMembers;
+    let deleteButton, formTitle, single, editMembers, buttonText;
     if (this.props.team.id){
       deleteButton = <button onClick={this.handleDelete} className="btn-float flex-1 center-flex-content delete red" >Delete</button>;
       formTitle = "Edit Team";
+      buttonText = "Save Changes";
       single = "";
       editMembers = (<button onClick={this.openEditMembers}
         className="btn-float btn-single">Edit Members</button>);
     } else {
       formTitle = "New Team";
       single = "btn-single ";
+      buttonText = "Create Team";
     }
     return (
       <section className="flex flex-1">
@@ -88,7 +90,7 @@ class TeamsForm extends React.Component {
 
               <div className="flex row">
                 {deleteButton}
-                <input className={`btn-float ${single}flex-1 center-flex-content`} type="submit" value={formTitle} onClick={this.handleSubmit} />
+                <input className={`btn-float ${single}flex-1 center-flex-content`} type="submit" value={buttonText} onClick={this.handleSubmit} />
               </div>
             </form>
           </div>

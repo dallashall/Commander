@@ -35,7 +35,7 @@ class TeamMemberForm extends React.Component {
     if (this.props.teamMemberIds.includes(memberId)) {
       return (
         <button
-          className="btn btn-float"
+          className="btn btn-float red"
           onClick={this.handleDropTeamMember(memberId)}>
           Drop
           </button>
@@ -67,7 +67,8 @@ class TeamMemberForm extends React.Component {
 
   render() {
     let associates = this.props.associates.sort((a, b) => a.username < b.username ? -1 : 1);
-    let filteredMembers;
+    associates = associates.filter(associate => associate.id !== this.props.currentUserId);
+    let filteredMembers, joinedColor;
     if (this.state.query.length > 1) {
       filteredMembers = associates.filter(associate => {
         return associate.username.match(new RegExp(this.state.query, 'i'));
@@ -82,7 +83,7 @@ class TeamMemberForm extends React.Component {
           <div className="flex flex-between flex-v-center flex-0-1">
             <h3>Edit Team Members</h3>
             <button
-              onClick={() => hashHistory.push('/dashboard/teams/edit')}
+              onClick={() => hashHistory.goBack()}
               className="btn-float btn-single center-flex-content">
               <i className="fa fa-times fa-fw fa-lg"></i>
             </button>

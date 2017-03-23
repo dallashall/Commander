@@ -71,6 +71,9 @@ export default ({store}) => {
               component={TeamMemberFormContainer} />
             </Route>
 
+            <Route path="team_members/edit"
+              component={TeamMemberFormContainer} />  
+
             <Route
               path="project"
               component={ProjectsDetailContainer}>

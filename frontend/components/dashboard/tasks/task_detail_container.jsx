@@ -16,7 +16,7 @@ import TaskDetail from './task_detail';
 const mapStateToProps = (state, ownProps) => {
   let selectedTask = ownProps.type === "view" ||
     ownProps.type === "edit" ?
-    state.tasks.selectedTask : { name: "", description: "", statuses: {}, id: undefined };
+    state.tasks.selectedTask : { name: "", description: "", statuses: "", id: undefined };
   return {
     teamMembers: state.teamMembers.teamMembers,
     currentProject: state.project.currentProject,

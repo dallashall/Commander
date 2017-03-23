@@ -14,7 +14,8 @@ const mapStateToProps = (state = _initial_state, ownProps) => {
     associates: state.session.currentUser.associates,
     teamMembers: state.teamMembers.teamMembers,
     teamMemberIds: values(state.teamMembers.teamMembers).map(member => member.user_id),
-    teamId: state.team.id
+    teamId: state.team.id,
+    currentUserId: state.session.currentUser.id
   }
 };
 

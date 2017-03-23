@@ -58,9 +58,14 @@ class Teams extends React.Component {
   render() {
     let {teams} = this.props;
     let selectedTeam = this.props.team;
-    let menuVisibility;
-    let menuArrow;
-    let editVisibility = this.props.team.owner.id === this.props.currentUser.id ? "" : "hidden";
+    let menuVisibility, menuArrow, newVisibility, menuTitle;
+    if (this.props.mine) {
+      newVisibility = "";
+      menuTitle = "My Teams";
+    } else {
+      newVisibility = "hidden";
+      menuTitle = "Teams I Belong To";
+    }
     if (this.state.menuVisible) {
       menuVisibility = ""; 
       menuArrow = "fa-caret-down";
@@ -74,13 +79,14 @@ class Teams extends React.Component {
         <div className="selected-container pointer">
           <div onClick={this.toggleMenu} className="selected btn-dropdown">
             <strong><i className={`fa ${menuArrow} fa-fw fa-lg`}></i>
-            Teams</strong> <span>{selectedTeam.name}</span>
+              {menuTitle}</strong>
           </div>
         </div>
         <ul
         className={`${menuVisibility}`}>
           <li
-          onClick={this.newClick}>
+            onClick={this.newClick}
+            className={newVisibility}>
             <button className="btn-dropdown"><i className="fa fa-plus fa-fw"></i> New Team</button>
           </li>
 

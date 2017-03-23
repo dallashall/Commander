@@ -20,6 +20,9 @@
             background-color: $dark-orange;
         }
     }
+    li.hidden {
+            display:none;
+        }
     .selected {
         text-transform: uppercase;
         background: $toupe;
@@ -30,28 +33,6 @@
         box-shadow: $light-shadow;
         border-top-right-radius: 10px;
         // border-bottom-right-radius: 10px;
-    }
-    .tooltip {
-        position: relative;
-        .tooltip-text {
-            display: none;
-            position: absolute;
-            z-index: 1;
-            background-color: white;
-            bottom: -25px;
-            left: 40px;
-            padding: 3px;
-            width: 65px;
-            border-radius: 5px;
-            border-top-left-radius: 0px;
-            font-family: 'Oswald', sans-serif;
-            font-size: 14px;
-            box-shadow: $light-shadow;
-            z-index: 100;
-        }
-        &:hover .tooltip-text {
-            display: block;
-        }
     }
     strong {
         font-weight: 400;

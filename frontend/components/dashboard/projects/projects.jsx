@@ -75,9 +75,14 @@ class Projects extends React.Component {
       );
     } else {
       projectsList = (
-        <div>
-          <h3>Select a Team to View Projects</h3>
-        </div>
+      <div className="teams">
+        <div className="selected-container">
+          <div onClick={this.toggleMenu} className="selected btn-dropdown">
+            <strong><i className={`fa ${menuArrow} fa-fw fa-lg`}></i>
+                Team Projects</strong><span>{projectName}</span>
+            </div>
+          </div>
+        </div>  
       );
     }
     return (
