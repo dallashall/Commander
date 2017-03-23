@@ -25,12 +25,17 @@
 }
 .task-list {
     margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 calc(100% - 180px);
     .task-header {
         border-bottom: 1px solid lightgrey;
         font-family: "Oswald", sans-serif;
     }
     ul {
         margin: 15px 0;
+        overflow-y: scroll;
+        padding:2px;
     }
     li {
         display: flex;
