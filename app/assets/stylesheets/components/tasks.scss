@@ -117,3 +117,33 @@
 .status-4 {
     background-color: $status-4;
 }
+
+.assignees {
+    strong {
+        display: inline-block;
+    }
+    p {
+        display: inline-block;
+        margin-left: 5px;
+    }
+    p::after {
+        content: ",";
+    }
+
+    p:last-of-type::after {
+        content: "";
+    }
+}
+
+.assigneeForm {
+    ul {
+        li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            button {
+                width: 150px;
+            }
+        }
+    }
+}

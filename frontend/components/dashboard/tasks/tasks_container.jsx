@@ -9,6 +9,7 @@ import {
   destroyTask,
   setSelectedTask
 } from '../../../actions/tasks_actions';
+import { fetchAllTaskAssignments } from '../../../actions/task_assignment_actions';
 import TasksIndex from './tasks_index';
 
 const _initial_state = {
@@ -31,7 +32,8 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   createTask: (task) => dispatch(createTask(task)),
   updateTask: (task) => dispatch(updateTask(task)),
   destroyTask: (taskId) => dispatch(destroyTask(taskId)),
-  setSelectedTask: (taskId) => dispatch(setSelectedTask(taskId))
+  setSelectedTask: (taskId) => dispatch(setSelectedTask(taskId)),
+  fetchAllTaskAssignments: (taskId) => dispatch(fetchAllTaskAssignments(taskId))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(TasksIndex);

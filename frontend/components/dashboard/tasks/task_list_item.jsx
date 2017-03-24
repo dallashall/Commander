@@ -1,7 +1,7 @@
 import React from 'react';
 import merge from 'lodash/merge';
 
-export default ({ task, updateTask, viewTask, editTask, newTask, setSelectedTask }) => {
+export default ({ task, updateTask, viewTask, editTask, newTask, setSelectedTask, fetchAllTaskAssignments }) => {
   let newStatus = task.status || 1;
   let updatedTask = merge({}, task);
   const toggleStatus = (num) => (e) => {
@@ -16,6 +16,8 @@ export default ({ task, updateTask, viewTask, editTask, newTask, setSelectedTask
 
   const view = (taskId) => (e) => {
     setSelectedTask(taskId).then(
+      res => fetchAllTaskAssignments(res.task.id)
+    ).then(
       () => viewTask()
     );
   };

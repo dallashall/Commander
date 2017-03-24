@@ -26,7 +26,8 @@ class TasksIndex extends React.Component {
       newTask,
       viewTask,
       closeTask,
-      setSelectedTask
+      setSelectedTask,
+      fetchAllTaskAssignments
     } = this.props;
     return (
       <div className="task-list">
@@ -43,6 +44,7 @@ class TasksIndex extends React.Component {
               viewTask={viewTask}
               closeTask={closeTask}
               setSelectedTask={setSelectedTask}
+              fetchAllTaskAssignments={fetchAllTaskAssignments}
             />)
           )}
         </ul>

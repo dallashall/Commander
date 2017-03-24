@@ -40,9 +40,9 @@ export const patchTaskAssignment = (task_assignment) => (
   })
 );
 
-export const deleteTaskAssignment = (taskAssignmentId) => (
-  $.ajax({
+export const deleteTaskAssignment = (taskAssignmentId) => {
+  return $.ajax({
     method: 'DELETE',
     url: `/api/task_assignments/${taskAssignmentId}`
-  })
-);
+  });
+};

@@ -24,17 +24,12 @@ export default (state = _initial_state, action) => {
       return newState
 
     case RECEIVE_TASK_ASSIGNMENT:
-      newState.allTaskAssignments[action.taskAssigment.id] = action.taskAssignment;
-      if (action.taskAssignment.user_id === state.session.currentUser.id) {
-        newState.userTaskAssignments[action.taskAssigment.id] = action.taskAssignment
-      }
+      let id = action.taskAssignment.id;
+      newState.allTaskAssignments[id] = action.taskAssignment;
       return newState;
     
     case REMOVE_TASK_ASSIGNMENT:
       delete (newState.allTaskAssignments[action.taskAssignment.id]);
-      if (newState.userTaskAssignments[action.taskAssignment.id]) {
-        delete (newState.userTaskAssignments[action.taskAssignment.id]);
-      }
       return newState;
     default:
       return state;

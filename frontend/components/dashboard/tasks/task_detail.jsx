@@ -1,5 +1,7 @@
 import React from 'react';
 import merge from 'lodash/merge';
+import TaskAssignmentIndexContainer from '../task_assignments/task_assignments_index_container';
+import TaskAssignmentFormContainer from '../task_assignments/task_assignment_form_container';
 
 class TaskDetail extends React.Component {
   constructor(props) {
@@ -87,9 +89,11 @@ class TaskDetail extends React.Component {
       formTitle = selectedTask.name;
       body = (
         <div>
+          <TaskAssignmentIndexContainer />  
           <div className="flex row flex-between"><span className="flex row">Status: <ul>{statuses}</ul></span><button className="btn btn-float task-edit" onClick={editTask}>Edit</button></div>
           <h4>Description:</h4>
           <p>{selectedTask.description}</p>
+          <TaskAssignmentFormContainer />
         </div>
       );
     } else {

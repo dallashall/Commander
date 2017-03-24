@@ -27,6 +27,11 @@ const receiveTaskAssignment = (taskAssignment) => ({
   taskAssignment
 });
 
+const destroyTaskAssignment = (taskAssignment) => ({
+  type: REMOVE_TASK_ASSIGNMENT,
+  taskAssignment
+});
+
 export const fetchAllTaskAssignments = (taskId) => (dispatch) => {
   return getTaskAssignments(taskId).then(
     allTaskAssignments => dispatch(receiveAllTaskAssignments(allTaskAssignments))
@@ -59,6 +64,6 @@ export const updateTaskAssignment = (formTaskAssignment) => (dispatch) => {
 
 export const removeTaskAssignment = (taskAssignmentId) => (dispatch) => {
   return deleteTaskAssignment(taskAssignmentId).then(
-    taskAssignment => dispatch(removeTaskAssignment(taskAssignment))
+    taskAssignment => dispatch(destroyTaskAssignment(taskAssignment))
   );
 };
