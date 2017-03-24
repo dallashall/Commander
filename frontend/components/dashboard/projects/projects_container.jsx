@@ -14,7 +14,9 @@ import Projects from './projects';
 const _initial_state = ({
   allProjects: {},
   teamProjects: {},
-  currentProject: {}
+  currentProject: {
+    id:""
+  }
 });
 
 const mapStateToProps = (state = _initial_state, ownProps) => ({
