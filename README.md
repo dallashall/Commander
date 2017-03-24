@@ -1,24 +1,32 @@
-# README
+# TaskCommander
+---------
+A powerful project and task management app for teams. Built with a Rails 5 back-end and a React/Redux front-end.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[TaskCommander](https://taskcommander.herokuapp.com)
 
-Things you may want to cover:
+## Features
+The design follows the principal Flux/React ideology of having a single source of *truth* (i.e. the master-state). Following this pattern gives rise to a few interesting scenarios.
 
-* Ruby version
+### Change Once, Update Everywhere
+There are quite a few times when it's useful to make a change on one a component in one part of an app and have those changes immediately show on a separate component in another part of the app. Consider the following animation:
 
-* System dependencies
+![Animation of changes being reflected in multiple locations](docs/elevated-state.gif)
 
-* Configuration
+How does this work?
 
-* Database creation
+Let's focus on the two active components: TaskListItem, and TaskListDetail. Both are *stateless* components. TaskListItem receives a Task JSON object from AllTaskListItems. TaskListDetail receives a Task JSON object from SelectedTask.
 
-* Database initialization
+In the TasksReducer, we update both the selected task and each individual task in one go. All changes pass down to their individual components, and it looks like simple magic to the user.
 
-* How to run the test suite
+### Feature 2
+![Animation of searching, adding, and dropping team-members](docs/search-component.gif)
+Components can be used anywhere!
 
-* Services (job queues, cache servers, search engines, etc.)
+## Roadmap
+For a single-user or a pre-defined team, this app is fully functional. The following will be released in the near future.
 
-* Deployment instructions
+### Team Invites
+Utilizing the Rails mailer, the app will generate formatted emails with custom links to allow both existing users and new users to immediately join a team upon clicking (and signing up, if not already a member).
 
-* ...
+### Task/Project Comments
+Users will be able to write messages on projects and tasks, viewable by team-members.
