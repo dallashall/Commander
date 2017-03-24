@@ -3,7 +3,7 @@ import {SET_TEAM, RESET_TEAM} from '../actions/team_actions';
 
 const _initial_state = {
   id: "",
-  name: "Select a Team",
+  name: "No Team Selected",
   description: "",
   owner: {
     username: "",

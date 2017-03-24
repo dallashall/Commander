@@ -3,11 +3,11 @@ import TaskListItem from './task_list_item';
 
 class TasksIndex extends React.Component {
 
-  // componentDidMount() {
-  //   if (this.props.currentProject.id) {
-  //     this.props.fetchAllTasks(this.props.currentProject.id);
-  //   }
-  // }
+  componentDidMount() {
+    if (this.props.currentProject.id) {
+      this.props.fetchAllTasks(this.props.currentProject.id);
+    }
+  }
 
   componentWillReceiveProps(nextProps) {
     if (this.props.currentProject.id != nextProps.currentProject.id) {

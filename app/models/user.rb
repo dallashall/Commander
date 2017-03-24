@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :projects
   has_many :tasks
   has_many :task_assignments
+  has_many :owned_tasks, through: :task_assignments, source: :task
   
   validates :username, presence: true, uniqueness: true
   validates :password_digest, :session_token, presence: true

@@ -3,12 +3,15 @@ import {
   RECEIVE_ALL_TASKS,
   RECEIVE_TASK,
   REMOVE_TASK,
-  SELECT_TASK
+  SELECT_TASK,
+  RECEIVE_ASSIGNED_TASKS,
+  RECEIVE_ASSIGNED_TASK
 } from '../actions/tasks_actions';
 
 const _initial_state = {
   allTasks: {},
-  selectedTask: {}
+  selectedTask: {},
+  assignedTasks: {}
 };
 
 export default (state = _initial_state, action) => {
@@ -21,6 +24,15 @@ export default (state = _initial_state, action) => {
 
     case RECEIVE_TASK:
       newState.allTasks[action.task.id] = action.task;
+      newState.selectedTask = action.task;
+      return newState;
+    
+    case RECEIVE_ASSIGNED_TASKS:
+      newState.assignedTasks = action.tasks;
+      return newState;
+
+    case RECEIVE_ASSIGNED_TASK:
+      newState.assignedTasks[action.task.id] = action.task;
       newState.selectedTask = action.task;
       return newState;
 

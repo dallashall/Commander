@@ -3,13 +3,17 @@ import {
     getTask,
     postTask,
     patchTask,
-    deleteTask
+    deleteTask,
+    getAssignedTasks
 } from '../util/tasks_api_utils';
+import { getUserTaskAssignments } from '../util/task_assignments_api_utils';
 
 export const RECEIVE_ALL_TASKS = "RECEIVE_ALL_TASKS";
 export const RECEIVE_TASK = "RECEIVE_TASK";
 export const REMOVE_TASK = "REMOVE_TASK";
 export const SELECT_TASK = "SELECT_TASK";
+export const RECEIVE_ASSIGNED_TASKS = "RECEIVE_ASSIGNED_TASKS";
+export const RECEIVE_ASSIGNED_TASK = "RECEIVE_ASSIGNED_TASK";
 
 const receiveAllTasks = (tasks) => ({
     type: RECEIVE_ALL_TASKS,
@@ -18,6 +22,16 @@ const receiveAllTasks = (tasks) => ({
 
 const receiveTask = (task) => ({
     type: RECEIVE_TASK,
+    task
+});
+
+const receiveAssignedTasks = (tasks) => ({
+    type: RECEIVE_ASSIGNED_TASKS,
+    tasks
+});
+
+const receiveAssignedTask = (task) => ({
+    type: RECEIVE_ASSIGNED_TASK,
     task
 });
 
@@ -52,6 +66,18 @@ export const createTask = (formTask) => (dispatch) => {
 export const updateTask = (formTask) => (dispatch) => {
     return patchTask(formTask).then(
         task => dispatch(receiveTask(task))
+    );
+};
+
+export const updateAssignedTask = (formTask) => (dispatch) => {
+    return patchTask(formTask).then(
+        task => dispatch(receiveAssignedTask(task))
+    );
+};
+
+export const fetchAssignedTasks = () => (dispatch) => {
+    return getUserTaskAssignments().then(
+        tasks => dispatch(receiveAssignedTasks(tasks))
     );
 };
 

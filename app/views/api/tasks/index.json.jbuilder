@@ -6,5 +6,6 @@
     json.name task.name
     json.description task.description
     json.status task.status
+    json.team_id task.project.team.id
   end
 end

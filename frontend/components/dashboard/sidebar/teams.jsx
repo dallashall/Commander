@@ -6,7 +6,7 @@ class Teams extends React.Component {
     super(props);
     this.state = {
       team: {
-        name: "Select a Team",
+        name: "No Team Selected",
         owner: {
           username: ""
         }

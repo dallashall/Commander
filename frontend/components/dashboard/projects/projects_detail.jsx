@@ -12,6 +12,12 @@ class ProjectsDetail extends React.Component {
     this.setDetailView = this.setDetailView.bind(this);
   }
   
+  componentDidMount() {
+    if (this.props.params.taskId) {
+      this.setDetailView("view")();
+    }
+  }
+
   setDetailView(type) {
     return () => {
       const details = type ? (<TaskDetailContainer

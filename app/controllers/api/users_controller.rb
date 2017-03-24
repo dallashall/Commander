@@ -18,8 +18,8 @@ class Api::UsersController < ApplicationController
   end
 
   def task_assignments
-    @task_assignments = current_user.task_assignments
-    render '/api/task_assignments/index.json.jbuilder'
+    @tasks = current_user.owned_tasks
+    render '/api/tasks/index.json.jbuilder'
   end
 
   def delete

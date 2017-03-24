@@ -8,6 +8,7 @@ import TeamsFormContainer from './dashboard/teams/teams_form_container';
 import TeamMemberFormContainer from './dashboard/team_members/team_member_form_container';
 import ProjectFormContainer from './dashboard/projects/project_form_container';
 import ProjectsDetailContainer from './dashboard/projects/projects_detail_container';
+import AssignedTasksContainer from './dashboard/tasks/assigned_tasks_container';
 
 const _redirectIfLoggedIn = (store) => (nextState, replace) => {
   if (store.getState().session.currentUser) {
@@ -44,7 +45,7 @@ export default ({store}) => {
         <Route
         path="/"
         component={App}>
-          <IndexRoute onEnter={_redirectFromRoot(store)} />
+          <IndexRoute onEnter={_redirectFromRoot(store)}/>
           <Route
           onEnter={_redirectIfLoggedIn(store)}
           path="/login"
@@ -59,6 +60,8 @@ export default ({store}) => {
           path="/dashboard"
           onEnter={_redirectIfLoggedOut(store)}
           component={DashboardContainer}>
+            <IndexRoute component={AssignedTasksContainer} />
+            
             <Route path="teams/new"
             edit={false}
             component={TeamsFormContainer}/>
@@ -76,6 +79,11 @@ export default ({store}) => {
 
             <Route
               path="project"
+              component={ProjectsDetailContainer}>
+            </Route>
+
+            <Route
+              path="task/:taskId"
               component={ProjectsDetailContainer}>
             </Route>
             
