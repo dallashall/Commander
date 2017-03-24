@@ -16,13 +16,15 @@ class User < ApplicationRecord
   after_create :generate_new_user_template
 
   def generate_new_user_template
-    team = Team.create(name:"Example Team", description: "This is an example of a team.", user_id: self.id)
-    project = Project.create(name: "Example Project", description:"This is an example of a project.", user_id: self.id, team_id: team.id)
-    task1 = Task.create(user_id: self.id, project_id: project.id, name: "Create your first team!", description: "Click the 'Teams' menu, and select 'New Team'.")
-    p task1
-    task2 = Task.create(user_id: self.id, project_id: project.id, name: "Create your first project!", description: "Click the 'Projects' menu, and select 'New Project'.")
-    task3 = Task.create(user_id: self.id, project_id: project.id, name: "Create your first task!", description: "Choose a project from the 'Projects' menu. Then click 'Create New Task'.")
-    [task1, task2, task3].each {|task| TaskAssignment.create(task_id: task.id, user_id: self.id)}
+    if self.id > 15
+      team = Team.create(name:"Example Team", description: "This is an example of a team.", user_id: self.id)
+      project = Project.create(name: "Example Project", description:"This is an example of a project.", user_id: self.id, team_id: team.id)
+      task1 = Task.create(user_id: self.id, project_id: project.id, name: "Create your first team!", description: "Click the 'Teams' menu, and select 'New Team'.")
+      p task1
+      task2 = Task.create(user_id: self.id, project_id: project.id, name: "Create your first project!", description: "Click the 'Projects' menu, and select 'New Project'.")
+      task3 = Task.create(user_id: self.id, project_id: project.id, name: "Create your first task!", description: "Choose a project from the 'Projects' menu. Then click 'Create New Task'.")
+      [task1, task2, task3].each {|task| TaskAssignment.create(task_id: task.id, user_id: self.id)}
+    end
   end
 
   def gen_token
