@@ -1,7 +1,6 @@
 import React from 'react';
 
 export default ({ assigneesNames }) => {
-  console.log(assigneesNames);
   if (assigneesNames.length) {
     return (
       <div className="assignees">
