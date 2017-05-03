@@ -2,7 +2,7 @@ class Project < ApplicationRecord
   attr_reader :statuses
   belongs_to :team
   belongs_to :user
-  has_many :tasks
+  has_many :tasks, dependent: :destroy
   validates :user_id, :user, :team_id, :team, :name, presence: true
   validates :name, uniqueness: { 
     scope: :team_id,

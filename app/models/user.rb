@@ -2,10 +2,10 @@ class User < ApplicationRecord
   has_many :team_members
   has_many :teams, through: :team_members
   has_many :associates, -> { distinct }, through: :teams
-  has_many :owned_teams, foreign_key: :user_id, class_name: :team
+  has_many :owned_teams, foreign_key: :user_id, class_name: :team, dependent: :destroy
   has_many :projects
   has_many :tasks
-  has_many :task_assignments
+  has_many :task_assignments, dependent: :destroy
   has_many :owned_tasks, through: :task_assignments, source: :task
   
   validates :username, presence: true, uniqueness: true
