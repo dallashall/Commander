@@ -6,7 +6,8 @@ import {
   deleteTeam
 } from '../util/teams_api_utils';
 import {fetchSelectedTeam, resetSelectedTeam} from './team_actions';
-import {fetchTeamMembers, resetTeamMembers} from './team_members_actions';
+import { fetchTeamMembers, resetTeamMembers } from './team_members_actions';
+import { fetchAssignedTasks, receiveAssignedTasks } from './tasks_actions';
 
 export const RECEIVE_TEAMS = 'RECEIVE_TEAMS';
 export const RECEIVE_TEAM = 'RECEIVE_TEAM';
@@ -62,8 +63,10 @@ export const destroyTeam = (id) => (dispatch) => {
   return deleteTeam(id).then(
     msg => {
       dispatch(removeTeam(id));
-      dispatch(resetSelectedTeam());
-      dispatch(resetTeamMembers());
+      
     }
-  )
+  ).then(() => dispatch(resetSelectedTeam()))
+    .then(() => dispatch(resetTeamMembers()))
+    .then(fetchAssignedTasks)
+    .then(res => receiveAssignedTasks(res));
 };

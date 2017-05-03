@@ -32,10 +32,14 @@ const receiveErrors = (msg) => ({
 });
 
 export const fetchTeamMembers = (teamId) => (dispatch) => {
-    return getTeamMembers(teamId).then(
-        teamMembers => dispatch(receiveTeamMembers(teamMembers)),
-        err => dispatch(receiveErrors(err))
-    );
+    if (teamId) {
+        return getTeamMembers(teamId).then(
+            teamMembers => dispatch(receiveTeamMembers(teamMembers)),
+            err => dispatch(receiveErrors(err))
+        );
+    } else {
+        return dispatch(receiveTeamMembers({}));
+    }
 };
 
 export const fetchTeamMember = (id) => (dispatch) => {

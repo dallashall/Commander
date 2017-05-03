@@ -17,7 +17,7 @@ const receiveAllTaskAssignments = (allTaskAssignments) => ({
   allTaskAssignments
 });
 
-const receiveUserTaskAssignments = (userTaskAssignments) => ({
+export const receiveUserTaskAssignments = (userTaskAssignments) => ({
   type: RECEIVE_USER_TASK_ASSIGNMENTS,
   userTaskAssignments
 });

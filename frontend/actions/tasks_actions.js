@@ -25,7 +25,7 @@ const receiveTask = (task) => ({
     task
 });
 
-const receiveAssignedTasks = (tasks) => ({
+export const receiveAssignedTasks = (tasks) => ({
     type: RECEIVE_ASSIGNED_TASKS,
     tasks
 });

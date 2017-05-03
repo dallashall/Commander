@@ -40,9 +40,13 @@ const removeProject = (projectId) => ({
 
 // Call on willReceiveProps for team projects
 export const fetchTeamProjects = (teamId) => (dispatch) => {
-    return getTeamProjects(teamId).then(
-        teamProjects => dispatch(receiveTeamProjects(teamProjects))
-    );
+    if (teamId) {
+        return getTeamProjects(teamId).then(
+            teamProjects => dispatch(receiveTeamProjects(teamProjects))
+        );
+    } else {
+        return dispatch(receiveTeamProjects({}));
+    }
 };
 
 export const fetchAllProjects = () => (dispatch) => {
