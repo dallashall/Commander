@@ -9,6 +9,9 @@ import {
 import {
   fetchSelectedTeam
 } from '../../../actions/team_actions';
+import {
+  fetchAssignedTasks
+} from '../../../actions/tasks_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let team;
@@ -30,7 +33,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     formAction: (team) => dispatch(formAction(team)),
     destroyTeam: (id) => dispatch(destroyTeam(id)),
-    fetchSelectedTeam: (id) => dispatch(fetchSelectedTeam(id))
+    fetchSelectedTeam: (id) => dispatch(fetchSelectedTeam(id)),
+    fetchAssignedTasks: () => dispatch(fetchAssignedTasks())
   };
 }
 

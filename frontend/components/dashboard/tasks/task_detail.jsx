@@ -16,6 +16,9 @@ class TaskDetail extends React.Component {
     if (this.state.id != nextProps.selectedTask.id || this.state.status != nextProps.selectedTask.status) {
       this.setState(nextProps.selectedTask);
     }
+    if (nextProps.type !== "view" && !nextProps.id && nextProps.selectedTask.id) {
+      this.props.resetSelectedTask();
+    }
   }
 
   handleChange(prop) {
@@ -27,9 +30,9 @@ class TaskDetail extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.state.project_id = this.props.currentProject.id;
-    this.props.formAction(this.state).then(
-      () => this.props.viewTask()
-    );
+    this.props.formAction(this.state)
+      .then((res) => this.props.setSelectedTask(res.task.id))
+      .then((res) => this.props.viewTask());
   }
   
   handleDelete(e) {
@@ -89,7 +92,6 @@ class TaskDetail extends React.Component {
       formTitle = selectedTask.name;
       body = (
         <div>
-          <TaskAssignmentIndexContainer />  
           <div className="flex row flex-between"><span className="flex row">Status: <ul>{statuses}</ul></span><button className="btn btn-float task-edit" onClick={editTask}>Edit</button></div>
           <h4>Description:</h4>
           <p>{selectedTask.description}</p>

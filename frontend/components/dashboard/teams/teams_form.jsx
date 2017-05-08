@@ -30,10 +30,11 @@ class TeamsForm extends React.Component {
     }
   }
 
-  handleDelete() {
-    this.props.destroyTeam(this.props.team.id).then(
-      hashHistory.push('/dashboard')
-    );
+  handleDelete(e) {
+    e.preventDefault();
+    this.props.destroyTeam(this.props.team.id)
+      .then(hashHistory.push('/dashboard'));
+      // .then(this.props.fetchAssignedTasks());
   }
 
   handleSubmit(e) {

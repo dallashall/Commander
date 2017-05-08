@@ -38,6 +38,9 @@ export default (state = _initial_state, action) => {
       newState = action.teams;
       return newState;
     case RECEIVE_TEAM:
+      if (!newState.my_teams) {
+        newState.my_teams = {};
+      }
       newState.my_teams[action.team.id] = action.team;
       return newState;
     case REMOVE_TEAM:

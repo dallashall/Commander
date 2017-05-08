@@ -21,12 +21,9 @@ class AssignedTasksIndex extends React.Component {
   viewTask() {
     let { selectedTask } = this.props;
     this.props.selectTeam(selectedTask.team_id).then(
-      () => this.props.setCurrentProject(selectedTask.project_id)
-    ).then(
-      () => this.props.fetchAllTaskAssignments(selectedTask.id)
-      ).then(
-      () => hashHistory.push(`/dashboard/task/${selectedTask.id}`)
-    );
+      () => this.props.setCurrentProject(selectedTask.project_id))
+      .then(() => this.props.fetchAllTaskAssignments(selectedTask.id))
+      .then(() => hashHistory.push(`/dashboard/task/${selectedTask.id}`));
   }
   
 

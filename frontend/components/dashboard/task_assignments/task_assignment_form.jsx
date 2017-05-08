@@ -4,13 +4,20 @@ class TaskAssignmentForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: ""
+      name: "",
+      assignmentIds: []
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleAssign = this.handleAssign.bind(this);
     this.handleRemove = this.handleRemove.bind(this);
     this.assignOrRemove = this.assignOrRemove.bind(this);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.state.assignmentIds != nextProps.assignmentIds) {
+      this.setState({ assignmentIds: nextProps.assignmentIds });
+    }
   }
 
   handleChange(e) {
@@ -35,7 +42,7 @@ class TaskAssignmentForm extends React.Component {
   assignOrRemove(userId) {
     let action, text, cssProp, isAssigned;
     let button;
-    this.props.assignmentIds.forEach(assignment => {
+    this.state.assignmentIds.forEach(assignment => {
       if (assignment[userId]) {
         action = this.handleRemove(assignment[userId]);
         text = "Remove Assignment";

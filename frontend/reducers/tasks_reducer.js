@@ -5,7 +5,8 @@ import {
   REMOVE_TASK,
   SELECT_TASK,
   RECEIVE_ASSIGNED_TASKS,
-  RECEIVE_ASSIGNED_TASK
+  RECEIVE_ASSIGNED_TASK,
+  RESET_SELECTED_TASK
 } from '../actions/tasks_actions';
 
 const _initial_state = {
@@ -38,6 +39,10 @@ export default (state = _initial_state, action) => {
 
     case SELECT_TASK:
       newState.selectedTask = action.task;
+      return newState;
+
+    case RESET_SELECTED_TASK:
+      newState.selectedTask = {};
       return newState;
 
     case REMOVE_TASK:

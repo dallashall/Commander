@@ -60,13 +60,10 @@ export const modifyTeam = (formTeam) => (dispatch) => {
 };
 
 export const destroyTeam = (id) => (dispatch) => {
-  return deleteTeam(id).then(
-    msg => {
-      dispatch(removeTeam(id));
-      
-    }
-  ).then(() => dispatch(resetSelectedTeam()))
+  return deleteTeam(id)
+    .then(msg => dispatch(removeTeam(id)))
+    .then(() => dispatch(resetSelectedTeam()))
     .then(() => dispatch(resetTeamMembers()))
-    .then(fetchAssignedTasks)
+    .then(() => dispatch(fetchAssignedTasks()))
     .then(res => receiveAssignedTasks(res));
 };

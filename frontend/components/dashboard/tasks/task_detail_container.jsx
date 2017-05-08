@@ -4,7 +4,9 @@ import {
   fetchTask,
   destroyTask,
   updateTask,
-  createTask
+  createTask,
+  setSelectedTask,
+  resetSelectedTask
 } from '../../../actions/tasks_actions';
 import {
   fetchAllTaskAssignments,
@@ -33,6 +35,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     destroyTask: (taskId) => dispatch(destroyTask(taskId)),
     updateTask: (task) => dispatch(updateTask(task)),
     createTask: (task) => dispatch(createTask),
+    setSelectedTask: (task) => dispatch(setSelectedTask(task)),
+    resetSelectedTask: () => dispatch(resetSelectedTask()),
     formAction: (task) => dispatch(formAction(task)),
     fetchAllTaskAssignments: (taskId) => dispatch(fetchAllTaskAssignments(taskId)),
     createTaskAssignment: (taskAssignment) => dispatch(createTaskAssignment(taskAssignment)),

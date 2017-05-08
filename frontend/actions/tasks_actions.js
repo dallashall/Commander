@@ -14,6 +14,7 @@ export const REMOVE_TASK = "REMOVE_TASK";
 export const SELECT_TASK = "SELECT_TASK";
 export const RECEIVE_ASSIGNED_TASKS = "RECEIVE_ASSIGNED_TASKS";
 export const RECEIVE_ASSIGNED_TASK = "RECEIVE_ASSIGNED_TASK";
+export const RESET_SELECTED_TASK = "RESET_SELECTED_TASK";
 
 const receiveAllTasks = (tasks) => ({
     type: RECEIVE_ALL_TASKS,
@@ -45,6 +46,10 @@ const selectTask = (task) => ({
     task
 });
 
+const resetTask = () => ({
+    type: RESET_SELECTED_TASK
+})
+
 export const fetchAllTasks = (projectId) => (dispatch) => {
     return getAllTasks(projectId).then(
         tasks => dispatch(receiveAllTasks(tasks))
@@ -52,15 +57,13 @@ export const fetchAllTasks = (projectId) => (dispatch) => {
 };
 
 export const fetchTask = (taskId) => (dispatch) => {
-    return getTask(taskId).then(
-        task => dispatch(receiveTask(task))
-    );
+    return getTask(taskId)
+        .then(task => dispatch(receiveTask(task)));
 };
 
 export const createTask = (formTask) => (dispatch) => {
-    return postTask(formTask).then(
-        task => dispatch(receiveTask(task))
-    );
+    return postTask(formTask)
+        .then(task => dispatch(receiveTask(task)));
 };
 
 export const updateTask = (formTask) => (dispatch) => {
@@ -91,4 +94,8 @@ export const setSelectedTask = (taskId) => (dispatch) => {
     return getTask(taskId).then(
         task => dispatch(selectTask(task))
     );
+};
+
+export const resetSelectedTask = () => (dispatch) => {
+    return dispatch(resetSelectedTask());
 };
