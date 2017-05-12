@@ -1,6 +1,7 @@
 import React from 'react';
 import merge from 'lodash/merge';
 import { hashHistory } from 'react-router';
+import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
 class TeamMemberForm extends React.Component {
   constructor(props) {
@@ -96,7 +97,12 @@ class TeamMemberForm extends React.Component {
               onChange={this.handleChange} />
           </form>
           <ul>
-           { this.associates(filteredMembers) }
+            <CSSTransitionGroup
+              transitionName="slide"
+              transitionEnterTimeout={500}
+              transitionLeaveTimeout={300}>
+            { this.associates(filteredMembers) }
+          </CSSTransitionGroup>
           </ul>  
         </div>
       </div>

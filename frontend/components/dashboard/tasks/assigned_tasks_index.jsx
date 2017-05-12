@@ -1,6 +1,7 @@
 import React from 'react';
 import TaskListItem from './task_list_item';
 import { hashHistory } from 'react-router';
+import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
 class AssignedTasksIndex extends React.Component {
   constructor(props) {
@@ -35,9 +36,9 @@ class AssignedTasksIndex extends React.Component {
       tasks
     } = this.props;
 
-    return (
-      <div className="flex flex-1">
-        <div className="box white floating left-panel full-height flex col flex-half-single">  
+    let display = (
+      <div key={1} className="flex flex-1">
+        <div className="box white floating left-panel full-height flex col flex-half-single">
           <div className="task-list">
             <span className="flex-between task-header"><h3>Tasks Assigned to Me:</h3>Click on a Task's Name for Details</span>
             <ul>
@@ -55,6 +56,18 @@ class AssignedTasksIndex extends React.Component {
           </div>
         </div>
       </div>
+    );
+
+    return (
+      <CSSTransitionGroup
+        transitionName="slide"
+        transitionEnterTimeout={500}
+        transitionLeaveTimeout={300}
+        component="div"
+        className="flex flex-1"
+      >
+        {display}
+      </CSSTransitionGroup>
     );
   }
 }

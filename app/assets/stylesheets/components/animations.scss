@@ -1,0 +1,22 @@
+.slide-enter {
+  position: relative;
+  width: 100%;
+  right: 100%;
+}
+
+.slide-enter.slide-enter-active {
+  position: relative;
+  right: 0px;
+  transition: 500ms ease-in;
+}
+
+.slide-leave {
+  position: relative;
+  right: 0px;
+}
+
+.slide-leave.slide-leave-active {
+  position: relative;
+  right: 100%;
+  transition: 300ms ease-in;
+}

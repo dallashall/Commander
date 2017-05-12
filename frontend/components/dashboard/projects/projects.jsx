@@ -75,7 +75,7 @@ class Projects extends React.Component {
       );
     } else {
       projectsList = (
-      <div className="teams">
+      <div key="project-list" className="teams">
         <div className="selected-container">
           <div onClick={this.toggleMenu} className="selected btn-dropdown">
             <strong><i className={`fa ${menuArrow} fa-fw fa-lg`}></i>

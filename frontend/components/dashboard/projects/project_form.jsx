@@ -59,7 +59,7 @@ class ProjectForm extends React.Component {
       single = "btn-single ";
     }
     return (
-      <div className="box white floating left-panel full-height flex col flex-half-single">
+      <div key="poject-form" className="box white floating left-panel full-height flex col flex-half-single">
         <div className="edit-form col">
           <div className="flex flex-between flex-v-center">
             <h3>{formTitle}</h3>

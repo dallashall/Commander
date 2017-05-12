@@ -34,7 +34,7 @@ class ProjectsDetail extends React.Component {
   render() {
     let { currentProject, children } = this.props;
     return (
-      <section className="flex flex-1">
+      <section key="project-detail" className="flex flex-1">
         <div className="box white floating left-panel full-height flex col flex-half-single">
           <div className="edit-form col">
             <div className="flex flex-between flex-v-center">

@@ -5,6 +5,7 @@ import MyTeamsContainer from './sidebar/my_teams_container';
 import TeamMemberContainer from './sidebar/team_members_container';
 import ProjectsContainer from './projects/projects_container';
 import { hashHistory } from 'react-router';
+import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
 export default ({children}) => {
   return (
