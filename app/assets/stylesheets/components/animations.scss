@@ -20,3 +20,33 @@
   right: 100%;
   transition: 300ms ease-in;
 }
+
+.main-slide-enter {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  right: 100%;
+}
+
+.main-slide-enter.main-slide-enter-active {
+  position: relative;
+  right: 0px;
+  width: 100%;
+  height: 100%;
+  transition: 500ms ease-in;
+}
+
+.main-slide-leave {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  right: 0px;
+}
+
+.main-slide-leave.main-slide-leave-active {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  right: 100%;
+  transition: 300ms ease-in;
+}
