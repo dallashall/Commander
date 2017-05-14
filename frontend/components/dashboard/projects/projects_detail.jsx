@@ -7,15 +7,28 @@ class ProjectsDetail extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      details: undefined
+      details: undefined,
+      animationCSS: "half-slide-leave"
     }
     this.setDetailView = this.setDetailView.bind(this);
+    this.animateEnter = this.animateEnter.bind(this);
+    this.animateLeave = this.animateLeave.bind(this);
   }
   
   componentDidMount() {
     if (this.props.params.taskId) {
       this.setDetailView("view")();
     }
+  }
+
+  animateLeave() {
+    this.setState({ animationCSS: "half-slide-leave" });
+    this.setState({ animationCSS: "half-slide-leave half-slide-leave-active" });
+  }
+  
+  animateEnter() {
+    this.setState({ animationCSS: "half-slide-enter" });
+    this.setState({ animationCSS: "half-slide-enter half-slide-enter-active" });
   }
 
   setDetailView(type) {
@@ -25,12 +38,12 @@ class ProjectsDetail extends React.Component {
         editTask={this.setDetailView("edit")}
         viewTask={this.setDetailView("view")}
         type={type} />) : undefined;
-        
-      this.setState({
-        details
-      });
+      this.animateEnter();
+      this.setState({ details });
     }
   } 
+
+
   render() {
     let { currentProject, children } = this.props;
     return (
@@ -55,10 +68,14 @@ class ProjectsDetail extends React.Component {
 
           <TasksContainer
             viewTask={this.setDetailView("view")}
-            newTask={this.setDetailView("new")} />
+            newTask={this.setDetailView("new")}
+            animateLeave={this.animateLeave}
+          />
           
         </div>
-        {this.state.details}
+        <div className={this.state.animationCSS}>
+          {this.state.details}
+        </div>
       </section>
     );
   };
