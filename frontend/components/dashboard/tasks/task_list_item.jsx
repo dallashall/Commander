@@ -24,6 +24,7 @@ export default ({ task, updateTask, viewTask, editTask, newTask, setSelectedTask
       );
     }, 400);
   };
+  
   const statusNames = {
     1: "Not Started",
     2: "In-Progress (Problems)",
