@@ -15,7 +15,7 @@ export default ({ task, updateTask, viewTask, editTask, newTask, setSelectedTask
   }
 
   const view = (taskId) => (e) => {
-    animateLeave();
+    // animateLeave();
     setTimeout(() => {
       setSelectedTask(taskId).then(
         res => fetchAllTaskAssignments(res.task.id)
