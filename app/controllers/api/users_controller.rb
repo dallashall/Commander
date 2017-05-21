@@ -22,10 +22,19 @@ class Api::UsersController < ApplicationController
     render '/api/tasks/index.json.jbuilder'
   end
 
+  def new_member
+    Api::UserMailer.add_member_to_team(new_member_params[:email], new_member_params[:team])
+    render json: ["Mission accomplished"]
+  end
+
   def delete
     @user = current_user
     if @user
       @user.destroy
     end
+  end
+
+  def new_member_params
+    params.require(:new_team_member).permit(:email, :team)
   end
 end

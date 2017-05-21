@@ -13,3 +13,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // window.store = store;
   ReactDOM.render(<Root store={store}>Commander</Root>, root);
 });
+
+window.inviteMember = function (email, team) {
+  return $.ajax({
+    method: 'POST',
+    url: '/api/new_team_member',
+    data: {new_team_member: {email: "dallas.hall@gmail.com", team: {id: 1, name: "cool team"}}}
+  })
+}

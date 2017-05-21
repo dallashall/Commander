@@ -15,6 +15,8 @@ Rails.application.routes.draw do
     resources :projects, only: [:show, :index, :create, :update, :destroy]
 
     resource :session, only: [:create, :destroy]
+
+    post "new_team_member", to: 'users#new_member'
     
     resources :tasks
     resources :task_assignments
