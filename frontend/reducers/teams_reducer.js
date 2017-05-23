@@ -27,24 +27,38 @@ const _initial_state = {
         id: ""
       }
     }
+  },
+  selected_team: {
+    name: "",
+    description: "",
+    id: "",
+    owner: {
+      username: "",
+      id: ""
+    }
   }
 };
 
 export default (state = _initial_state, action) => {
   Object.freeze(state);
-  let newState = merge({}, state);
+  let newState;
   switch (action.type) {
     case RECEIVE_TEAMS:
-      newState = action.teams;
+      newState = merge({}, state);
+      newState.teams = action.teams;
       return newState;
     case RECEIVE_TEAM:
+      newState = merge({}, state);
       if (!newState.my_teams) {
         newState.my_teams = {};
       }
       newState.my_teams[action.team.id] = action.team;
+      newState.selected_team = action.team;
       return newState;
     case REMOVE_TEAM:
+      newState = merge({}, state);
       delete(newState.my_teams[action.id]);
+      newState.selected_team = _initial_state.selected_team;
       return newState;
     default:
       return state

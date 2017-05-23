@@ -6,7 +6,7 @@ import {logout} from '../../actions/session/session_actions';
 const mapStateToProps = (state, ownProps) => {
   return {
     currentUser: state.session.currentUser,
-    team: state.team
+    team: state.teams.selected_team
   };
 };
 

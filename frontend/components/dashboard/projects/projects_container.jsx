@@ -23,7 +23,7 @@ const mapStateToProps = (state = _initial_state, ownProps) => ({
   allProjects: values(state.project.allProjects),
   teamProjects: values(state.project.teamProjects),
   currentProject: state.project.currentProject,
-  team: state.team
+  team: state.teams.selected_team
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

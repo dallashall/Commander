@@ -29,7 +29,7 @@ class Teams extends React.Component {
   handleClick(teamId, idx) {
     return (e) => {
       let team = this.state.team;
-      this.props.fetchSelectedTeam(teamId).then(
+      this.props.fetchTeam(teamId).then(
         () => this.setState({team: this.props.teams[idx]})
       ).then(
         () => this.props.fetchTeamMembers(teamId)
@@ -95,7 +95,7 @@ class Teams extends React.Component {
             onClick={this.handleClick(team.id, idx)}
             key={idx}>
               <button className="btn btn-dropdown">
-                <strong>{team.name}</strong> <span>{team.owner.username}</span>
+                <strong>{team.name}</strong> <span>{team.owner ? team.owner.username : ""}</span>
               </button>
             </li>
             )

@@ -21,8 +21,6 @@ class Dashboard extends React.Component {
   componentWillReceiveProps(nextProps) {
     let { children } = this.props;
     let nextChildren = nextProps.children;
-    console.log(this.props);
-    console.log(nextProps);
     if (children.props.location.pathname !== nextChildren.props.location.pathname) {
       this.animateLeave();
       setTimeout(() => {

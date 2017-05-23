@@ -14,8 +14,8 @@ import {
   setCurrentProject
 } from '../../../actions/project_actions';
 import {
-  fetchSelectedTeam
-} from '../../../actions/team_actions';
+  fetchTeam
+} from '../../../actions/teams_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   tasks: values(state.tasks.assignedTasks),
@@ -28,7 +28,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   setSelectedTask: (taskId) => dispatch(setSelectedTask(taskId)),
   setCurrentProject: (projectId) => dispatch(setCurrentProject(projectId)),
   fetchAllTaskAssignments: (taskId) => dispatch(fetchAllTaskAssignments(taskId)),
-  selectTeam: (teamId) => dispatch(fetchSelectedTeam(teamId))
+  selectTeam: (teamId) => dispatch(fetchTeam(teamId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(AssignedTasksIndex);

@@ -41,7 +41,7 @@ class Projects extends React.Component {
       menuVisibility = "hidden";
       menuArrow = "fa-caret-right";
     }
-    if (currentProject.team_id != team.id) {
+    if (currentProject && (currentProject.team_id != team.id)) {
       projectName = "";
     } else {
       projectName = currentProject.name;

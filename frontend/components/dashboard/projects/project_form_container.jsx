@@ -21,7 +21,7 @@ const mapStateToProps = (state, ownProps) => {
     };
   }
   return {
-    team: state.team,
+    team: state.teams.selected_team,
     currentProject
   };
 };

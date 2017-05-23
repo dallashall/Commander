@@ -34,7 +34,6 @@ class TeamsForm extends React.Component {
     e.preventDefault();
     this.props.destroyTeam(this.props.team.id)
       .then(hashHistory.push('/dashboard'));
-      // .then(this.props.fetchAssignedTasks());
   }
 
   handleSubmit(e) {

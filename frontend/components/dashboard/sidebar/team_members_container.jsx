@@ -12,7 +12,7 @@ const mapStateToProps = (state, ownProps) => {
   return {
     teamMembers: values(state.teamMembers.teamMembers),
     errors: state.teamMembers.errors,
-    team: state.team
+    team: state.teams.selected_team
   };
 };
 
