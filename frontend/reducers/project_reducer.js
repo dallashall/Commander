@@ -10,7 +10,9 @@ import {
 const _initial_state = {
     allProjects: {},
     teamProjects: {},
-    currentProject: {}
+    currentProject: {
+        team_id: undefined
+    }
 }
 
 export default (state = _initial_state, action) => {
