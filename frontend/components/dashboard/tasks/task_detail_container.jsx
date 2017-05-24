@@ -1,18 +1,12 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import {
-  fetchTask,
   destroyTask,
   updateTask,
   createTask,
   setSelectedTask,
   resetSelectedTask
 } from '../../../actions/tasks_actions';
-import {
-  fetchAllTaskAssignments,
-  createTaskAssignment,
-  removeTaskAssignment
-} from '../../../actions/task_assignment_actions';
 import TaskDetail from './task_detail';
 
 const mapStateToProps = (state, ownProps) => {
@@ -20,27 +14,20 @@ const mapStateToProps = (state, ownProps) => {
     ownProps.type === "edit" ?
     state.tasks.selectedTask : { name: "", description: "", statuses: "", id: undefined };
   return {
-    teamMembers: state.teamMembers.teamMembers,
     currentProject: state.project.currentProject,
-    selectedTask: selectedTask,
-    taskAssignments: state.taskAssignments.fetchAllTaskAssignments,
-    currentUser: state.session.currentUser
+    selectedTask: selectedTask
   }
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   let formAction = ownProps.type === "edit" ? updateTask : createTask;
   return {
-    fetchTask: (taskId) => dispatch(fetchTask(taskId)),
     destroyTask: (taskId) => dispatch(destroyTask(taskId)),
     updateTask: (task) => dispatch(updateTask(task)),
     createTask: (task) => dispatch(createTask),
     setSelectedTask: (task) => dispatch(setSelectedTask(task)),
     resetSelectedTask: () => dispatch(resetSelectedTask()),
     formAction: (task) => dispatch(formAction(task)),
-    fetchAllTaskAssignments: (taskId) => dispatch(fetchAllTaskAssignments(taskId)),
-    createTaskAssignment: (taskAssignment) => dispatch(createTaskAssignment(taskAssignment)),
-    removeTaskAssignment: (taskAssignmentId) => dispatch(removeTaskAssignment(taskAssignmentId))
   }
 };
 

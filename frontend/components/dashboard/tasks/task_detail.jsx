@@ -16,7 +16,8 @@ class TaskDetail extends React.Component {
     if (this.state.id != nextProps.selectedTask.id || this.state.status != nextProps.selectedTask.status) {
       this.setState(nextProps.selectedTask);
     }
-    if (nextProps.type !== "view" && !nextProps.id && nextProps.selectedTask.id) {
+    if (nextProps.type !== "view" && !nextProps.selectedTask.id && nextProps.selectedTask.id) {
+      console.log(nextProps);
       this.props.resetSelectedTask();
     }
   }
@@ -59,20 +60,9 @@ class TaskDetail extends React.Component {
   render() {
     let {
       type,
-      teamMembers,
-      currentProject,
       selectedTask,
-      taskAssignments,
-      currentUser,
-      fetchTask,
-      destroyTask,
       editTask,
-      updateTask,
-      createTask,
       closeTask,
-      fetchAllTaskAssignments,
-      createTaskAssignment,
-      removeTaskAssignment
     } = this.props;
 
     let formTitle, body, deleteButton, submitText, single, statuses;
