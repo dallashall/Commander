@@ -17,7 +17,6 @@ class TaskDetail extends React.Component {
       this.setState(nextProps.selectedTask);
     }
     if (nextProps.type !== "view" && !nextProps.selectedTask.id && nextProps.selectedTask.id) {
-      console.log(nextProps);
       this.props.resetSelectedTask();
     }
   }
