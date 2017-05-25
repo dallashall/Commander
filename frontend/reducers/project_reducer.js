@@ -11,7 +11,8 @@ const _initial_state = {
     allProjects: {},
     teamProjects: {},
     currentProject: {
-        team_id: undefined
+        team_id: undefined,
+        name: ""
     }
 }
 
