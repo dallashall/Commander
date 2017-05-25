@@ -31,7 +31,7 @@ export default (state = _initial_state, action) => {
             newState.currentProject = action.project;
             return newState;
         case SELECT_PROJECT:
-            newState.currentProject = newState.teamProjects[action.projectId];
+            newState.currentProject = newState.teamProjects[action.projectId] || {};
             return newState;
         case REMOVE_PROJECT:
             delete(newState.allProjects[action.projectId]);

@@ -34,6 +34,7 @@ class Projects extends React.Component {
   render() {
     let { allProjects, teamProjects, currentProject, team, children } = this.props;
     let projectsList, menuVisibility, menuArrow, projectName;
+    console.log(currentProject);
     if (this.state.menuVisible) {
       menuVisibility = ""; 
       menuArrow = "fa-caret-down";
@@ -44,7 +45,7 @@ class Projects extends React.Component {
     if (currentProject && (currentProject.team_id != team.id)) {
       projectName = "";
     } else {
-      projectName = currentProject.name;
+      projectName = currentProject ? currentProject.name : "";
     }
     if (team.id) {
       projectsList = (
