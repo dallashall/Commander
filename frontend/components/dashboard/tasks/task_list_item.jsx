@@ -16,13 +16,11 @@ export default ({ task, updateTask, viewTask, editTask, newTask, setSelectedTask
 
   const view = (taskId) => (e) => {
     // animateLeave();
-    setTimeout(() => {
-      setSelectedTask(taskId).then(
+    setSelectedTask(taskId).then(
         res => fetchAllTaskAssignments(res.task.id)
       ).then(
         () => viewTask()
       );
-    }, 400);
   };
   
   const statusNames = {

@@ -1,19 +1,27 @@
-User.create!([
-  {username: "Demo User", password_digest: "$2a$10$BMU2UHCh8nLLzTwGDLzhLenYgqMs7ySiyVqm7.mCb/iVAx6CzplU2", session_token: "IcWruDe_7oDPZPKXFFa2aw"},
-  {username: "Bob", password_digest: "$2a$10$FgjQY9ZHr4WnGRbrppOl4O3K4qbeSzufTa7gkIXxLt9k.JJeT7ouu", session_token: "_AthRNbKJcAa8KrJAWWxKg"},
-  {username: "Sally", password_digest: "$2a$10$y.6Eu2qwDHMcTrvaZYfP1.bj35uurt6ia88D7FXG6mi7UdJeiIo6C", session_token: "0jjelvxV1N4MgOrxOZTnrw"},
-  {username: "Jane", password_digest: "$2a$10$Vzo1PmI8DLnsQTurl9UBouB.2HP8TvOf3eVpuLN1CiLabCMty8.mu", session_token: "L8VbYLSPk_Vt3piL5135Gw"},
-  {username: "John", password_digest: "$2a$10$GMK/G0MprHyjm20Pa99awuR0p73rwAu.0sLnOgeH4X0JMZeK4YKOS", session_token: "y7yUUhqVtu0DVC9nLVnGRw"},
-  {username: "Jon", password_digest: "$2a$10$qUNEzQB4MXvEJKI.eqXyL.dJH0K3PEkNxfxEYDfgsrKxXByAS2txe", session_token: "_yoXBPelaIkcbRBk3X7Ycw"},
-  {username: "Dylan", password_digest: "$2a$10$vOE7lGQiHHWLY5j05E9ACua03I2JnYBoZIU5iNjTO1hu2GmLrKW3.", session_token: "hgT3Qjonky923JSjt5SqWQ"},
-  {username: "Dillon", password_digest: "$2a$10$zYGIP9Hkcz8deqSXyjkfjO8RbwS2J28y9sEnEZB.v7SDEm8om80..", session_token: "e2UaWzVTam5L2hTb6xw9AQ"},
-  {username: "May", password_digest: "$2a$10$Z5/Vdp11nrUW0Xv0XAcqe.o5aYkPeqHTWIDv3T8PAzsCARmNMxSLO", session_token: "j6oj6af5NNHblLUgAPH4cw"},
-  {username: "Gene", password_digest: "$2a$10$OmdJLoa1vxtQcQDVzY1ep.hkOV50fkCAsS3oMwQ7w0hbUQBL9yOLm", session_token: "qhWPfZ-u2V36kwTfUZlp6Q"},
-  {username: "Samson", password_digest: "$2a$10$qN2QmtwUYmsQNVIHVrgyTOhNZYnWNou5UHK1h36Od9QBLYcwqJR2m", session_token: "o_VA82S5EHfUco-B1JzY3w"},
-  {username: "Carl", password_digest: "$2a$10$yqRhgGoLcMoXrA9YnfQe6./WYnlYywVlAhNy8mThTPR6cMYTykWRO", session_token: "eMGsp2WubSKeSQzgmESH4w"},
-  {username: "Brad", password_digest: "$2a$10$KuO6U5yjGTjpFT0T5UyI6OoJWC8Fn63yXvVYLy9fw2zxhuYFLR6H6", session_token: "aQsIoVGe7xWh6MK8CPxlPA"},
-  {username: "Drew", password_digest: "$2a$10$Kpvd6bCe51zMop2WEbE1quwB6FswfvmfecLQljVtay/iqE4Ym5fLi", session_token: "2nL3n9n8Waj0gFYkZmMtSQ"},
-  {username: "Kat", password_digest: "$2a$10$SfdVhUX8rUrR0P0fEAJFzewT94ERg3r/0788JipYQo4ly5IcbyND2", session_token: "8KZz952UkmyugRsRpECT-g"}
+User.delete_all
+
+Team.delete_all
+TeamMember.delete_all
+Project.delete_all
+Task.delete_all
+TaskAssignment.delete_all
+
+User.create([
+  {username: "Demo User", password: "12345678", session_token: "IcWruDe_7oDPZPKXFFa2aw"},
+  {username: "Bob", password: "password", session_token: "_AthRNbKJcAa8KrJAWWxKg"},
+  {username: "Sally", password: "password", session_token: "0jjelvxV1N4MgOrxOZTnrw"},
+  {username: "Jane", password: "password", session_token: "L8VbYLSPk_Vt3piL5135Gw"},
+  {username: "John", password: "password", session_token: "y7yUUhqVtu0DVC9nLVnGRw"},
+  {username: "Jon", password: "password", session_token: "_yoXBPelaIkcbRBk3X7Ycw"},
+  {username: "Dylan", password: "password", session_token: "hgT3Qjonky923JSjt5SqWQ"},
+  {username: "Dillon", password: "password", session_token: "e2UaWzVTam5L2hTb6xw9AQ"},
+  {username: "May", password: "password", session_token: "j6oj6af5NNHblLUgAPH4cw"},
+  {username: "Gene", password: "password", session_token: "qhWPfZ-u2V36kwTfUZlp6Q"},
+  {username: "Samson", password: "password", session_token: "o_VA82S5EHfUco-B1JzY3w"},
+  {username: "Carl", password: "password", session_token: "eMGsp2WubSKeSQzgmESH4w"},
+  {username: "Brad", password: "password", session_token: "aQsIoVGe7xWh6MK8CPxlPA"},
+  {username: "Drew", password: "password", session_token: "2nL3n9n8Waj0gFYkZmMtSQ"},
+  {username: "Kat", password: "password", session_token: "8KZz952UkmyugRsRpECT-g"}
 ])
 Team.create([
   {user_id: 8, name: "Merchandise-Team", description: nil},
