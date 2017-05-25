@@ -15,7 +15,8 @@ const _initial_state = ({
   allProjects: {},
   teamProjects: {},
   currentProject: {
-    id:""
+    id: "",
+    name: ""
   }
 });
 
