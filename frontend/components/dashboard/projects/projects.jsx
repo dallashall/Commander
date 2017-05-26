@@ -34,7 +34,6 @@ class Projects extends React.Component {
   render() {
     let { allProjects, teamProjects, currentProject, team, children } = this.props;
     let projectsList, menuVisibility, menuArrow, projectName;
-    console.log(currentProject);
     if (this.state.menuVisible) {
       menuVisibility = ""; 
       menuArrow = "fa-caret-down";

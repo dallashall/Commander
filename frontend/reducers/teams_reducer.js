@@ -45,7 +45,8 @@ export default (state = _initial_state, action) => {
   switch (action.type) {
     case RECEIVE_TEAMS:
       newState = merge({}, state);
-      newState.teams = action.teams;
+      newState.teams = action.teams.teams;
+      newState.my_teams = action.teams.my_teams;
       return newState;
     case RECEIVE_TEAM:
       newState = merge({}, state);
