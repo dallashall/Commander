@@ -22,13 +22,13 @@ class Api::UsersController < ApplicationController
     render '/api/tasks/index.json.jbuilder'
   end
 
-  API_KEY = ENV['mailgun_api_key']
-  DOMAIN = ENV['domain']
-  API_URL = "https://api:#{API_KEY}@api.mailgun.net/v2/#{DOMAIN}"
-  email = new_member_params[:email]
   
   def new_member
-    RestClient.post API_URL+"/messages",
+    api_key = ENV['mailgun_api_key']
+    domain = ENV['domain']
+    api_url = "https://api:#{api_key}@api.mailgun.net/v2/#{domain}"
+    email = new_member_params[:email]
+    RestClient.post api_url+"/messages",
       :from => email,
       :to => email,
       :subject => "This is subject",
