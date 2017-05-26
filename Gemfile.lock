@@ -224,6 +224,7 @@ DEPENDENCIES
   rack-livereload
   rails (~> 5.0.2)
   rb-fsevent
+  rest-client
   sass-rails (~> 5.0)
   seed_dump
   spring

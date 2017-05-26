@@ -23,7 +23,16 @@ class Api::UsersController < ApplicationController
   end
 
   def new_member
-    Api::UserMailer.add_member_to_team(new_member_params[:email], new_member_params[:team])
+    API_KEY = ENV['mailgun_api_key']
+    DOMAIN = ENV['domain']
+    API_URL = "https://api:#{API_KEY}@api.mailgun.net/v2/#{DOMAIN}"
+    email = new_member_params[:email]
+    RestClient.post API_URL+"/messages",
+      :from => email,
+      :to => email,
+      :subject => "This is subject",
+      :text => "Text body",
+      :html => "<b>HTML</b> version of the body!"
     render json: ["Mission accomplished"]
   end
 
