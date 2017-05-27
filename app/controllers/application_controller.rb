@@ -3,6 +3,10 @@ class ApplicationController < ActionController::Base
   helper_method :current_user, :logged_in?
 
   def login(user)
+    if user_params[:team_hash]
+      team = TeamJoin.find_by(team_hash: user_params[:team_hash]).team_id
+      team.destroy if TeamMember.create(user_id: user.id, team_id: team.id)
+    end
     user.reset_session_token!
     session[:session_token] = user.session_token
     render "api/users/show"
@@ -23,7 +27,7 @@ class ApplicationController < ActionController::Base
   end
 
   def user_params
-    params.require(:user).permit(:username, :password)
+    params.require(:user).permit(:username, :password, :team_hash)
   end
 
   def project_params
