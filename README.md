@@ -23,9 +23,9 @@ In the TasksReducer, we update both the selected task and each individual task i
 Components can be used anywhere!
 
 ## Roadmap
-For a single-user or a pre-defined team, this app is fully functional. The following will be released in the near future.
+For a single-user or teams, this app is fully functional. The following will be released in the near future.
 
-### Team Invites
+### ~~Team Invites~~ (Completed and Released!)
 Utilizing the Rails mailer, the app will generate formatted emails with custom links to allow both existing users and new users to immediately join a team upon clicking (and signing up, if not already a member).
 
 ### Task/Project Comments
