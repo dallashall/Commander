@@ -28,11 +28,18 @@ class TeamMemberForm extends React.Component {
 
   inviteNewMember(e) {
     e.preventDefault();
-    this.props.inviteNewMember({ email: this.state.newMemberEmail, team_id: this.props.teamId })
-      .then(message => this.setState({ message: "Invitation sent!", loading: true }))
-      .then(() => setTimeout(() => {
-        this.setState({ message: "", loading: false, newMemberEmail: "" })
-      }, 2000));
+    if (this.props.currentUserId === 1) {
+      this.setState({ message: "Demo Users cannot invite members" });
+      setTimeout(() => {
+        this.setState({ message: "" });
+      }, 2000);
+    } else {
+      this.props.inviteNewMember({ email: this.state.newMemberEmail, team_id: this.props.teamId })
+        .then(message => this.setState({ message: "Invitation sent!", loading: true }))
+        .then(() => setTimeout(() => {
+          this.setState({ message: "", loading: false, newMemberEmail: "" })
+        }, 2000));
+    }
   }
 
   handleAddTeamMember(id) {
