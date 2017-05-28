@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     delete :team_members, to: 'team_members#destroy'
     resources :team_members, only: [:show, :index, :create]
 
+    post 'join_team', to: 'team_members#join_team'
+
     delete :projects, to: 'projects#destroy'
     get 'projects/:id/tasks', to: 'projects#tasks'
     resources :projects, only: [:show, :index, :create, :update, :destroy]

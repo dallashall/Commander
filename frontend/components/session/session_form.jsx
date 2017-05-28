@@ -21,6 +21,12 @@ class SessionForm extends React.Component {
     this.guestLogin = this.guestLogin.bind(this);
   }
 
+  componentDidMount() {
+    if (this.props.loggedIn && this.props.router.params.team_hash) {
+      this.props.joinTeam(this.props.team_hash).then(() => history.pushState('/'));
+    }
+  }
+
   handleSubmit(e) {
     if (e) e.preventDefault();
     const user = merge({}, this.state);

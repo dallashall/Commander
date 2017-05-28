@@ -21,7 +21,6 @@ class Api::UsersController < ApplicationController
     @tasks = current_user.owned_tasks
     render '/api/tasks/index.json.jbuilder'
   end
-
   
   def new_member
     api_key = ENV['mailgun_api_key']
