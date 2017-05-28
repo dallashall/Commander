@@ -23,7 +23,11 @@ class SessionForm extends React.Component {
 
   componentDidMount() {
     if (this.props.loggedIn && this.props.router.params.team_hash) {
-      this.props.joinTeam(this.props.team_hash).then(() => history.pushState('/'));
+      team_hash = this.props.router.params.team_hash
+      console.log('====================================');
+      console.log(team_hash);
+      console.log('====================================');
+      this.props.joinTeam(team_hash).then(() => history.pushState('/'));
     }
   }
 
