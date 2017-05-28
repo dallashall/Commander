@@ -35,7 +35,7 @@ class Api::UsersController < ApplicationController
       :to => email,
       :subject => "You've been invited to join a team on TaskCommander",
       :html => <<-HTML
-        Log in or sign up to <a href="https://taskcommander.herokuapp.com/login/#{team_join.team_hash}">join the team!</a>
+        Log in or sign up to <a href="https://taskcommander.herokuapp.com/#/login/#{team_join.team_hash}">join the team!</a>
       HTML
 
     p res.body
