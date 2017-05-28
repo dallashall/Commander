@@ -21,6 +21,14 @@ export const postTeamMember = (teamMember) => {
     });
 };
 
+export const inviteNewMember = (new_team_member) => {
+    return $.ajax({
+        method: 'POST',
+        url: 'api/new_team_member',
+        data: { new_team_member }
+    });
+}
+
 export const deleteTeamMember = (memberId, teamId) => {
     return $.ajax({
         method: 'DELETE',

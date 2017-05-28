@@ -6,6 +6,11 @@
     text-transform: uppercase;
 }
 
+[class^="btn"]:disabled {
+    background:grey;
+    color: darkgrey;
+}
+
 .btn-float {
     box-shadow: $light-shadow;
     margin-left: 5px;

@@ -9,15 +9,30 @@ class TeamMemberForm extends React.Component {
     this.state = {
       teamMembers: this.props.teamMembers,
       associates: this.props.associates,
-      query: ""
+      query: "",
+      newMemberEmail: "",
+      message: "",
+      loading: false
     }
     this.handleChange = this.handleChange.bind(this);
     this.associates = this.associates.bind(this);
     this.add_or_drop = this.add_or_drop.bind(this);
+    this.inviteNewMember = this.inviteNewMember.bind(this);
   }
 
-  handleChange(e) {
-    this.setState({ query: e.target.value });
+  handleChange(param) {
+    return (e) => {
+      this.setState({ [param]: e.target.value });
+    }
+  }  
+
+  inviteNewMember(e) {
+    e.preventDefault();
+    this.props.inviteNewMember({ email: this.state.newMemberEmail, team_id: this.props.teamId })
+      .then(message => this.setState({ message: "Invitation sent!", loading: true }))
+      .then(() => setTimeout(() => {
+        this.setState({ message: "", loading: false, newMemberEmail: "" })
+      }, 2000));
   }
 
   handleAddTeamMember(id) {
@@ -89,12 +104,21 @@ class TeamMemberForm extends React.Component {
               <i className="fa fa-times fa-fw fa-lg"></i>
             </button>
           </div>
+          <form onSubmit={this.inviteNewMember}>
+            <div className="flex">
+              <label className="flex-1" htmlFor="email">Invite via Email:
+                <input value={this.state.newMemberEmail} classID="email" type="text" placeholder="Email Address" onChange={this.handleChange("newMemberEmail")} /> 
+              </label>  
+              <button disabled={this.state.loading} className="btn-float flex-1">Invite New Team Member</button>
+            </div>
+            <p className="message">{this.state.message}</p>
+          </form>  
           <form>
             <input
               type="text"
               placeholder="Search by Username"
               value={this.state.query}
-              onChange={this.handleChange} />
+              onChange={this.handleChange("query")} />
           </form>
           <ul>
             <CSSTransitionGroup

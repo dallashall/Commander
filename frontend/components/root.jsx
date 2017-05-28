@@ -17,7 +17,7 @@ const _redirectIfLoggedIn = (store) => (nextState, replace) => {
 }
 
 const _redirectIfNoTeam = (store) => (nextState, replace) => {
-  if(!store.getState().team.id) {
+  if(!store.getState().teams.selected_team.id) {
     replace('/dashboard');
   }
 }
@@ -57,6 +57,10 @@ export default ({store}) => {
           component={SessionFormContainer} />
 
           <Route
+            path="/login/:team_hash"
+            component={SessionFormContainer} />  
+
+          <Route
           path="/dashboard"
           onEnter={_redirectIfLoggedOut(store)}
           component={DashboardContainer}>
@@ -75,7 +79,8 @@ export default ({store}) => {
             </Route>
 
             <Route path="team_members/edit"
-              component={TeamMemberFormContainer} />  
+            component={TeamMemberFormContainer}>
+            </Route>
 
             <Route
               path="project"

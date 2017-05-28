@@ -5,10 +5,17 @@ import {Link, hashHistory} from 'react-router';
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
+    console.log('====================================');
+    console.log(props);
+    console.log('====================================');
     this.state = {
       username: "",
-      password: ""
+      password: "",
+      team_hash: props.router.params.team_hash
     };
+    console.log('====================================');
+    console.log(this.state);
+    console.log('====================================');
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.guestLogin = this.guestLogin.bind(this);
