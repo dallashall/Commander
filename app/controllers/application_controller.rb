@@ -4,8 +4,8 @@ class ApplicationController < ActionController::Base
 
   def login(user)
     if user_params[:team_hash]
-      team = TeamJoin.find_by(team_hash: user_params[:team_hash])
-      team.destroy if TeamMember.create(user_id: user.id, team_id: team.id)
+      team_join = TeamJoin.find_by(team_hash: user_params[:team_hash])
+      team.destroy if TeamMember.create(user_id: user.id, team_id: team_join.team_id)
     end
     user.reset_session_token!
     session[:session_token] = user.session_token
