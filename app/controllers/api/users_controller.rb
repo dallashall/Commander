@@ -28,10 +28,6 @@ class Api::UsersController < ApplicationController
     api_url = "https://api:#{api_key}@api.mailgun.net/v2/#{domain}"
     email = new_member_params[:email]
     team_join = TeamJoin.create(team_id: new_member_params[:team_id])
-    p "==================="
-    p team_join.team_id
-    p email
-    p "==================="
     res = RestClient.post api_url+"/messages",
       :from => email,
       :to => email,

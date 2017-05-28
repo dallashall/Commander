@@ -29,7 +29,6 @@ class Api::TeamMembersController < ApplicationController
   end
 
   def join_team
-    p params[:team_hash]
     team_join = TeamJoin.find_by(team_hash: params[:team_hash])
     @team_member = TeamMember.new(user_id: current_user.id, team_id: team_join.team_id)
     if @team_member.save

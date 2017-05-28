@@ -5,17 +5,11 @@ import {Link, hashHistory} from 'react-router';
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
-    console.log('====================================');
-    console.log(props);
-    console.log('====================================');
     this.state = {
       username: "",
       password: "",
       team_hash: props.router.params.team_hash
     };
-    console.log('====================================');
-    console.log(this.state);
-    console.log('====================================');
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.guestLogin = this.guestLogin.bind(this);
@@ -24,10 +18,6 @@ class SessionForm extends React.Component {
   componentDidMount() {
     if (this.props.loggedIn && this.props.router.params.team_hash) {
       const team_hash = this.props.router.params.team_hash
-      console.log('====================================');
-      console.log(this.props);
-      console.log(team_hash);
-      console.log('====================================');
       this.props.joinTeam(team_hash).then(() => hashHistory.push('/'));
     }
   }
