@@ -30,6 +30,9 @@ export const inviteNewMember = (new_team_member) => {
 }
 
 export const joinTeam = (team_hash) => {
+    console.log('====================================');
+    console.log(team_hash);
+    console.log('====================================');
     return $.ajax({
         method: 'POST',
         url: 'api/join_team',
