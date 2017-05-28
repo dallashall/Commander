@@ -28,7 +28,7 @@ class SessionForm extends React.Component {
       console.log(this.props);
       console.log(team_hash);
       console.log('====================================');
-      this.props.joinTeam(team_hash).then(() => history.pushState('/'));
+      this.props.joinTeam(team_hash).then(() => hashHistory.push('/'));
     }
   }
 
