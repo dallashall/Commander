@@ -1,4 +1,4 @@
-var path = require('path');
+const path = require('path');
 
 module.exports = {
   entry: './frontend/commander.jsx',
@@ -6,17 +6,18 @@ module.exports = {
     filename: './app/assets/javascripts/bundle.js',
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: [/\.jsx?$/],
         exclude: /(node_modules)/,
         loader: 'babel-loader',
-        query: {
-          presets: ['es2015', 'react']
+        options: {
+          presets: ['env', 'react']
         }
       }
     ]
   },
+  context: __dirname,
   devtool: 'source-map',
   resolve: {
     extensions: ['.js', '.jsx', '*']
