@@ -6,7 +6,7 @@ import {
 } from '../util/api_util';
 
 export const RECEIVE_SINGLE_TASK = 'RECEIVE_SINGLE_TASK';
-export const RECEIVE_ALL_TASKS = 'RECEIVE_ALL_TASKS';
+export const RECEIVE_TASKS = 'RECEIVE_TASKS';
 export const REMOVE_TASK = 'REMOVE_TASK';
 export const RECEIVE_TASK_ERRORS = 'RECEIVE_TASK_ERRORS';
 
@@ -15,8 +15,8 @@ const receiveSingleTask = payload => ({
   payload,
 });
 
-const receiveAllTasks = payload => ({
-  type: RECEIVE_ALL_TASKS,
+const receiveTasks = payload => ({
+  type: RECEIVE_TASKS,
   payload,
 });
 
@@ -48,9 +48,9 @@ export const fetchSingleTask = id => dispatch => (
     .catch(errors => dispatch(receiveErrors(errors)))
 );
 
-export const fetchAllTasks = projectId => dispatch => (
+export const fetchProjectTasks = projectId => dispatch => (
   getToApi(`/projects/${projectId}/tasks`)
-    .then(payload => dispatch(receiveAllTasks(payload)))
+    .then(payload => dispatch(receiveTasks(payload)))
     .catch(errors => dispatch(receiveErrors(errors)))
 );
 
