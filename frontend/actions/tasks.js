@@ -18,7 +18,7 @@ export const createTask = formTask => dispatch => (
 );
 
 export const updateTask = formTask => dispatch => (
-  patctToApi(`/tasks/${formTask.id}`, formTask)
+  patchToApi(`/tasks/${formTask.id}`, formTask)
     .then(payload => dispatch(action(RECEIVE_SINGLE_TASK, payload)))
     .catch(errors => dispatch(action(RECEIVE_TASK_ERRORS, errors)))
 );
@@ -36,7 +36,7 @@ export const fetchProjectTasks = projectId => dispatch => (
 );
 
 export const deleteTask = taskId => dispatch => (
-  getToApi(`/projects/${projectId}/tasks`)
+  deleteToApi(`/projects/${projectId}/tasks`)
     .then(payload => dispatch(action(REMOVE_TASK, payload)))
     .catch(errors => dispatch(action(RECEIVE_TASK_ERRORS, errors)))
 );
