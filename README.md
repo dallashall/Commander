@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/dallashall/Commander.svg?branch=master)](https://travis-ci.org/dallashall/Commander)
+
 # TaskCommander
 ---------
 A powerful project and task management app for teams. Built with a Rails 5 back-end and a React/Redux front-end.
