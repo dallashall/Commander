@@ -48,6 +48,27 @@ Users have the ability to invite new and existing Task Commander members to join
 ## Roadmap
 For a single-user or teams, this app is fully functional. The following will be released in the near future.
 
+### [Upgrade to Rails 5.1, React 16, and React Router 4](https://github.com/dallashall/Commander/tree/update-to-latest-react)
+
+This app was written just as react-router 4 was released and before I knew very much about the benefits of [normalized state with Redux](https://redux.js.org/docs/recipes/reducers/NormalizingStateShape.html#). 
+  - Normalize Redux store
+    - Re-write/simplify api-utils, actions, and reducers
+  - Re-write components to be primarily functional
+    - Remove unecessary lifecycle calls with better state shape
+  - Remove unecessary DOM elements
+    - Utilize fragments for multi-element rendering
+  - Simplify front-end routing
+    - Custom logic-route components for easier-to-read code
+  - Clean and optimize back-end routes
+    - Remove unecessary routes
+    - Slim down controllers
+  - Testing
+    - Test front-end logic with unit-tests (Jest/Enzyme)
+    - Test content with snapshots (Jest/Enzyme)
+    - Test backend logic with unit tests (Rspec)
+    - Add integration tests for models (Rspec)
+    - Test API endpoints (Postman)
+
 ### Task/Project Comments
  - Users will be able to write messages on projects and tasks, viewable by team-members.
 
