@@ -2,8 +2,8 @@
   "name": "Commander",
   "version": "1.0.0",
   "engines": {
-    "node": "4.1.1",
-    "npm": "2.1.x"
+    "node": "6.10.1",
+    "npm": "4.6.x"
   },
   "description": "https://taskcommander.herokuapp.com",
   "main": "index.js",
