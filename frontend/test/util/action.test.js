@@ -1,4 +1,4 @@
-import { action } from '../../util/action';
+import action from '../../util/action';
 
 test('creates correct object', () => {
   expect.assertions(3);
