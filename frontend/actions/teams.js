@@ -36,7 +36,7 @@ export const fetchUserTeams = () => dispatch => (
 );
 
 export const deleteTeam = teamId => dispatch => (
-  deleteToApi(`/teams/${teamId}`, formTeam)
+  deleteToApi(`/teams/${teamId}`)
     .then(payload => dispatch(action(REMOVE_TEAM, payload)))
     .catch(errors => dispatch(action(RECEIVE_TEAM_ERRORS, errors)))
 );

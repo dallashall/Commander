@@ -1,11 +1,11 @@
-import { 
+import {
   getToApi,
   deleteToApi,
   patchToApi,
   postToApi,
 } from '../util/api_util';
-import { action } from '../util/action';
- 
+import action from '../util/action';
+
 export const RECEIVE_SINGLE_PROJECT = 'RECEIVE_SINGLE_PROJECT';
 export const RECEIVE_PROJECTS = 'RECEIVE_PROJECTS';
 export const REMOVE_PROJECT = 'REMOVE_PROJECT';

@@ -1,10 +1,8 @@
 import {
-  getToApi,
   postToApi,
-  patchToApi,
-  deleteToApi
+  deleteToApi,
 } from '../util/api_util';
-import { action } from '../util/action';
+import action from '../util/action';
 
 export const RECEIVE_USER = 'RECEIVE_USER';
 export const REMOVE_USER = 'REMOVE_USER';
@@ -15,13 +13,13 @@ export const login = formUser => dispatch => (
   postToApi('/users', formUser)
     .then(payload => dispatch(action(RECEIVE_USER, payload)))
     .catch(errors => dispatch(action(RECEIVE_USER_ERRORS, errors)))
-)
+);
 
 export const signup = formUser => dispatch => (
   postToApi('/session', formUser)
-    .then(payload => dispatch(action(R, payload)))
+    .then(payload => dispatch(action(RECEIVE_USER, payload)))
     .catch(errors => dispatch(action(RECEIVE_USER_ERRORS, errors)))
-)
+);
 
 export const logout = () => dispatch => (
   deleteToApi('/session')

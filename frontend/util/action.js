@@ -1,4 +1,4 @@
-export const action = (type, payload) => ({
+export default (type, payload) => ({
   type,
   payload,
 });
